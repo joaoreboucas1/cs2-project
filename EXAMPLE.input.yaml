@@ -1,11 +1,16 @@
-timing: True
-debug: false
-stop_at_error: True
-
+theory:
+  classy:
+    path: ./external_modules/code/CLASS-cs2
+    use_renames: true
+    extra_args:
+      non linear: hmcode
+      l_max_scalars: 3000
+      N_ncdm: 1
+      N_ur: 2.0328
+      Omega_Lambda: 0
 likelihood:
   planck_2018_highl_plik.TTTEEE:
     path: ./external_modules/
-
 params:
   cs2_fld_0:
     prior:
@@ -139,18 +144,6 @@ params:
   omegan2:
     derived: 'lambda omegan, H0: omegan*(H0/100)**2'
     latex: \Omega_\mathrm{\\nu} h^2
-
-theory:
-  classy:
-    path: ./external_modules/code/CLASS-cs2
-    use_renames: True
-    extra_args:
-      non linear: hmcode
-      l_max_scalars: 3000
-      N_ncdm: 1
-      N_ur: 2.0328
-      Omega_Lambda: 0
-
 sampler:
   evaluate:
     override:
@@ -185,5 +178,6 @@ sampler:
       galf_TE_A_143: 0.104139430567495
       galf_TE_A_143_217: 0.7243969435429755
       galf_TE_A_217: 1.9172389532222787
-
-output: ./projects/cs2-project/EXAMPLE
+timing: true
+stop_at_error: true
+output: EXAMPLE
