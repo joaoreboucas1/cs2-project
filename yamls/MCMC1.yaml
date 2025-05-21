@@ -1,40 +1,42 @@
-theory:
-  classy:
-    path: ./external_modules/code/CLASS-cs2
-    use_renames: true
-    extra_args:
-      non linear: hmcode
-      l_max_scalars: 3000
-      N_ncdm: 1
-      N_ur: 2.0328
-      Omega_Lambda: 0
+timing: True
+debug: false
+stop_at_error: True
+
 likelihood:
   planck_2018_highl_plik.TTTEEE:
     path: ./external_modules/
+
 params:
-  cs2_fld_0:
+  log10_cs2_fld_0:
     prior:
-      min: 0
-      max: 1
-    proposal: 0.05
+      min: -5
+      max: 0
+    proposal: 0.08
+    latex: \log_10(c_{s,0}^2)
+    drop: true
+  cs2_fld_0:
+    value: 'lambda log10_cs2_fld_0: 10**log10_cs2_fld_0'
     latex: c_{s,0}^2
   cs2_fld_1:
-    prior:
-      min: 0
-      max: 1
-    proposal: 0.05
-    latex: c_{s,1}^2
-  w_fld:
-    prior:
-      min: -2
-      max: -0.3333
-    proposal: 0.05
-    latex: w_0
-  wa_fld:
     prior:
       min: -1
       max: 1
     proposal: 0.05
+    latex: c_{s,1}^2
+  w0pwa:
+    prior:
+      min: -1
+      max: -0.333
+    proposal: 0.03
+    drop: true
+  w0_fld:
+    prior:
+      min: -1
+      max: -0.333
+    proposal: 0.03
+    latex: w_0
+  wa_fld:
+    value: 'lambda w0pwa, w0_fld: w0pwa - w0_fld'
     latex: w_a
   logA:
     prior:
@@ -144,40 +146,20 @@ params:
   omegan2:
     derived: 'lambda omegan, H0: omegan*(H0/100)**2'
     latex: \Omega_\mathrm{\\nu} h^2
+
+theory:
+  classy:
+    path: ./external_modules/code/CLASS-cs2
+    use_renames: True
+    extra_args:
+      non linear: hmcode
+      l_max_scalars: 3000
+      N_ncdm: 1
+      N_ur: 2.044
+      Omega_Lambda: 0
+
 sampler:
-  evaluate:
-    override:
-      cs2_fld_0: 0.5
-      cs2_fld_1: -0.01
-      w_fld: -0.9
-      wa_fld: 0.1
-      logA: 3.0448
-      ns: 0.96605
-      H0: 67.32
-      omegabh2: 0.022383
-      omegach2: 0.12011
-      tau: 0.0543
-      A_planck: 1.0
-      calib_100T: 0.9987983397505178
-      calib_217T: 0.9987920200754659
-      A_cib_217: 65.73042744689862
-      xi_sz_cib: 0.014846669030139295
-      A_sz: 7.578566683767703
-      ksz_norm: 1.830268477586373
-      gal545_A_100: 7.125299946661039
-      gal545_A_143: 8.131426090291662
-      gal545_A_143_217: 15.761217543468344
-      gal545_A_217: 77.5214280531049
-      ps_A_100_100: 261.2823535136313
-      ps_A_143_143: 74.28290799465884
-      ps_A_143_217: 41.22322908951794
-      ps_A_217_217: 125.31939118418777
-      galf_TE_A_100: 0.15314307440243102
-      galf_TE_A_100_143: 0.07963000762154462
-      galf_TE_A_100_217: 0.46305342686237344
-      galf_TE_A_143: 0.104139430567495
-      galf_TE_A_143_217: 0.7243969435429755
-      galf_TE_A_217: 1.9172389532222787
-timing: true
-stop_at_error: true
-output: EXAMPLE
+  mcmc:
+    
+
+output: ./projects/cs2-project/chains/MCMC1/MCMC1
