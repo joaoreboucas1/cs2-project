@@ -37,13 +37,13 @@ params:
     latex: c_{s,1}^2
   w0pwa:
     prior:
-      min: -1
-      max: -0.333
+      min: -3
+      max: 1
     proposal: 0.03
     drop: true
   w0_fld:
     prior:
-      min: -1
+      min: -2
       max: -0.333
     proposal: 0.03
     latex: w_0
@@ -165,7 +165,7 @@ theory:
     use_renames: True
     extra_args:
       non linear: hmcode
-      use_ppf: no
+      use_ppf: yes
       l_max_scalars: 3000
       N_ncdm: 1
       N_ur: 2.044
@@ -175,4 +175,4 @@ sampler:
   mcmc:
     
 
-output: ./projects/cs2-project/chains/MCMC1/MCMC1
+output: ./projects/cs2-project/chains/MCMC2/MCMC2
