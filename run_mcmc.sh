@@ -6,7 +6,8 @@
 #SBATCH --error=./projects/cs2-project/logs/%x_%a_%A.err
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=4
-#SBATCH --cpus-per-task=8
+#SBATCH --cpus-per-task=5
+#SBATCH --exclusive
 #SBATCH --mail-user=joao.reboucas@unesp.br
 #SBATCH --mail-type=ALL
 
@@ -20,5 +21,11 @@ source start_cocoa.sh
 
 export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK}
 export OMP_PROC_BIND=close
+export OMP_PLACES=cores
 
-mpirun -n ${SLURM_NTASKS_PER_NODE} --mca btl tcp,self cobaya-run ${YAML} -r
+# NOTE: some libraries may use these variables to control threading
+export MKL_NUM_THREADS=${SLURM_CPUS_PER_TASK}
+export OPENBLAS_NUM_THREADS=${SLURM_CPUS_PER_TASK}
+export NUMEXPR_NUM_THREADS=${SLURM_CPUS_PER_TASK}
+
+mpirun -n ${SLURM_NTASKS_PER_NODE} --mca btl tcp,self --bind-to core --map-by socket:PE=${OMP_NUM_THREADS} cobaya-run ${YAML} -r
