@@ -1,7 +1,7 @@
 timing: True
 debug: False
 stop_at_error: False
-output: ./projects/cs2-project/chains/MCMC11/MCMC11
+output: ./projects/cs2-project/chains/EVALUATE11
 
 likelihood:
   # CMB
@@ -63,7 +63,7 @@ params:
   w0pwa:
     prior:
       min: -1
-      max: -0.01
+      max: 1
     proposal: 0.2
     drop: true
   w0:
@@ -190,7 +190,7 @@ theory:
     use_renames: True
     stop_at_error: True
     extra_args:
-      dark_energy_model: ppf
+      dark_energy_model: fluid
       cs2_type: 2 # Cs2_Reconstructed
       num_bins: 3
       z1: 0.5
@@ -201,21 +201,7 @@ theory:
       nnu: 3.046
 
 sampler:
-  mcmc:
-    covmat:
-    covmat_params:
-    learn_proposal: True
-    learn_proposal_Rminus1_min: 0.035
-    learn_proposal_Rminus1_max: 4.
-    learn_proposal_Rminus1_max_early: 30.
-    max_samples: .inf
-    Rminus1_stop: 0.01
-    Rminus1_cl_stop: 0.12
-    Rminus1_cl_level: 0.95
-    measure_speeds: True
-    drag: False
-    oversample_power: 0
-    oversample_thin: True
-    max_tries: 3000
-    burn_in: 0
-    Rminus1_single_split: 4    
+  evaluate:
+    override:
+      w0: -0.9
+      w0pwa: -0.7

@@ -74,7 +74,7 @@ params:
   w0pwa:
     prior:
       min: -1
-      max: 1
+      max: -0.01
     proposal: 0.2
     drop: true
   w0:
@@ -83,6 +83,8 @@ params:
       max: -0.333
     proposal: 0.2
     latex: w_0
+  w:
+    value: 'lambda w0: w0'
   wa:
     value: 'lambda w0pwa, w0: w0pwa - w0'
     latex: w_a
@@ -336,10 +338,11 @@ theory:
   camb:
     path: ./external_modules/code/CAMB-cs2
     use_renames: True
+    stop_at_error: True
     extra_args:
-      dark_energy_model: fluid
+      dark_energy_model: ppf
       cs2_type: 2 # Cs2_Reconstructed
-      num_cs2_bins: 3
+      num_bins: 3
       z1: 0.5
       z2: 1.0
       z3: 2.0
