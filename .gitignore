@@ -6,3 +6,4 @@
 *.updated.yaml
 logs/
 chains/
+__pycache__/
