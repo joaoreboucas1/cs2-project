@@ -14,3 +14,7 @@ In `analysis/`, we perform the statistical analysis of the chains. The notebook 
 - cs2w = sound speed proportional to equation of state
 - cs2r = reconstructed (binned) sound speed
 - cs2q = constant sound speed equal to 1
+
+## Dataset combinations
+DS1: P18+DESI+DESY5
+DS2: P18+DESI+DESY5+DESY3SHEAR
