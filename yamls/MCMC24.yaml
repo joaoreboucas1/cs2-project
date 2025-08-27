@@ -1,48 +1,34 @@
 timing: True
 debug: False
 stop_at_error: False
-output: ./projects/cs2-project/chains/MCMC23/MCMC23
+output: ./projects/cs2-project/chains/MCMC24/MCMC24
 
 likelihood:
-  # CMB
-  planck_2018_highl_plik.TTTEEE:
-    path: ./external_modules
-    clik_file: plc_3.0/hi_l/plik/plik_rd12_HM_v22b_TTTEEE.clik  
-  planck_2018_lowl.TT:
-    path: ./external_modules/  
-  planck_2018_lowl.EE:
-    path: ./external_modules
-  # BAO  
-  bao.desi_2024_bao_all:
-    path: ./external_modules/data/
-  # SN
-  sn.desy5:
-    path: ./external_modules/data/sn_data    
+  # DESY3 Cosmic Shear
+  des_y3.des_cosmic_shear:
+    path: ./external_modules/data/des_y3
+    data_file: des_y3_real.dataset
+    accuracyboost: 1.0
+    integration_accuracy: 1
+    kmax_boltzmann: 5.0
+    # 1 EE2, 2 Halofit
+    non_linear_emul: 2
+    IA_model: 1
+    IA_redshift_evolution: 3   
 
 params:
   cs2_0:
     value: 1.0
-    latex: c_{s,0}^2
   cs2_1:
-    prior:
-      min: -1
-      max: 1
-    proposal: 0.15
-    latex: c_{s,1}^2
+    value: 0.0
   w0pwa:
-    prior:
-      min: -3
-      max: 1
-    proposal: 0.2
-    drop: true
+    value: -1
   w0:
-    prior:
-      min: -3
-      max: -0.333
-    proposal: 0.2
-    latex: w_0
+    value: -1
+  w:
+    value: 'lambda w0: w0'
   wa:
-    value: 'lambda w0pwa, w0: w0pwa - w0'
+    value: -1
     latex: w_a
   logA:
     prior:
@@ -111,6 +97,7 @@ params:
       scale: 0.006
     proposal: 0.003
     latex: \tau_\mathrm{reio}
+  # ---------- Derived params -------------
   omegal:
     latex: \Omega_\Lambda
   omegam:
@@ -152,6 +139,144 @@ params:
   omegan:
     derived: 'lambda omegan2, H0: omegan2/((H0/100)**2)'
     latex: \Omega_\mathrm{\\nu}
+  # ---------- DES NUISANCE -----------
+  DES_DZ_S1:
+    prior:
+      dist: norm
+      loc: 0.0
+      scale: 0.018
+    ref:
+      dist: norm
+      loc: 0.0
+      scale: 0.018
+    proposal: 0.005
+    latex: \Delta z_\mathrm{s,DES}^1
+  DES_DZ_S2:
+    prior:
+      dist: norm
+      loc: 0.0
+      scale: 0.015
+    ref:
+      dist: norm
+      loc: 0.0
+      scale: 0.015
+    proposal: 0.005
+    latex: \Delta z_\mathrm{s,DES}^2
+  DES_DZ_S3:
+    prior:
+      dist: norm
+      loc: 0.0
+      scale: 0.011
+    ref:
+      dist: norm
+      loc: 0.0
+      scale: 0.011
+    proposal: 0.005
+    latex: \Delta z_\mathrm{s,DES}^3
+  DES_DZ_S4:
+    prior:
+      dist: norm
+      loc: 0.0
+      scale: 0.017
+    ref:
+      dist: norm
+      loc: 0.0
+      scale: 0.017
+    proposal: 0.005
+    latex: \Delta z_\mathrm{s,DES}^4
+  DES_M1:
+    prior:
+      dist: norm
+      loc: -0.006
+      scale: 0.009
+    ref:
+      dist: norm
+      loc: -0.006
+      scale: 0.009
+    proposal: 0.004
+    latex: m_\mathrm{DES}^1
+  DES_M2:
+    prior:
+      dist: norm
+      loc: -0.02
+      scale: 0.008
+    ref:
+      dist: norm
+      loc: -0.02
+      scale: 0.008
+    proposal: 0.004
+    latex: m_\mathrm{DES}^2
+  DES_M3:
+    prior:
+      dist: norm
+      loc: -0.024
+      scale: 0.008
+    ref:
+      dist: norm
+      loc: -0.024
+      scale: 0.008
+    proposal: 0.004
+    latex: m_\mathrm{DES}^3
+  DES_M4:
+    prior:
+      dist: norm
+      loc: -0.037
+      scale: 0.008
+    ref:
+      dist: norm
+      loc: -0.037
+      scale: 0.008
+    proposal: 0.003
+    latex: m_\mathrm{DES}^4
+  DES_A1_1:
+    prior:
+      min: -5
+      max:  5
+    ref:
+      dist: norm
+      loc: 0.7
+      scale: 0.5
+    proposal: 0.5
+    latex: A_\mathrm{1-IA,DES}^1
+  DES_A1_2:
+    prior:
+      min: -5
+      max:  5
+    ref:
+      dist: norm
+      loc: -1.7
+      scale: 0.5
+    proposal: 0.5
+    latex: A_\mathrm{1-IA,DES}^2
+  DES_A2_1:
+    prior:
+      min: -5
+      max:  5
+    ref:
+      dist: norm
+      loc: -1.36
+      scale: 0.5
+    proposal: 0.5
+    latex: A_\mathrm{2-IA,DES}^1
+  DES_A2_2:
+    prior:
+      min: -5
+      max:  5
+    ref:
+      dist: norm
+      loc: -2.5
+      scale: 0.5
+    proposal: 0.5
+    latex: A_\mathrm{2-IA,DES}^2
+  DES_BTA_1:
+    prior:
+      min: 0
+      max: 2
+    ref:
+      dist: norm
+      loc: 1
+      scale: 0.15
+    proposal: 0.1
 
 theory:
   camb:
@@ -162,7 +287,6 @@ theory:
       num_massive_neutrinos: 1
       nnu: 3.046
       dark_energy_model: ppf
-      cs2_type: 1
 
 sampler:
   mcmc:
@@ -182,4 +306,4 @@ sampler:
     oversample_thin: True
     max_tries: 3000
     burn_in: 0
-    Rminus1_single_split: 4    
+    Rminus1_single_split: 4

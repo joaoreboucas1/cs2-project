@@ -169,6 +169,7 @@ theory:
       num_massive_neutrinos: 1
       nnu: 3.046
       dark_energy_model: ppf
+      cs2_type: 1
 
 sampler:
   mcmc:

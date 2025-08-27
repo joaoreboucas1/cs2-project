@@ -18,3 +18,8 @@
 21 | w0wa | cs2w | DS1
 22 | w0waq | cs2w | DS1 | cs2,0=1
 23 | w0wa | cs2w | DS1 | cs2,0=1
+24 | lcdm | -- | DESY3 Shear
+25 | w0wa | cs2q | DESY3 Shear
+26 | w0wa | cs2w | DESY3 Shear | cs2,0=1
+27 | w0wa | cs2w | DESY3 Shear | cs2,0=0
+28 | w0wa | cs2w | DESY3 Shear
