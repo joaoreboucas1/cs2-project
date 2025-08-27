@@ -16,5 +16,5 @@
 14 | w0wa | cs2r | DS2 | 3 bins
 20 | w0waq | cs2w | DS1
 21 | w0wa | cs2w | DS1
-22 | w0waq | cs2w | DS2
-23 | w0wa | cs2w | DS2
+22 | w0waq | cs2w | DS1 | cs2,0=1
+23 | w0wa | cs2w | DS1 | cs2,0=1
