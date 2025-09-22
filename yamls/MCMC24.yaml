@@ -5,7 +5,7 @@ output: ./projects/cs2-project/chains/MCMC24/MCMC24
 
 likelihood:
   # DESY3 Cosmic Shear
-  des_y3.des_cosmic_shear:
+  des_y3.cosmic_shear:
     path: ./external_modules/data/des_y3
     data_file: des_y3_real.dataset
     accuracyboost: 1.0
