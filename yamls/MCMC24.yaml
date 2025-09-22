@@ -21,8 +21,6 @@ params:
     value: 1.0
   cs2_1:
     value: 0.0
-  w0pwa:
-    value: -1
   w0:
     value: -1
   w:
