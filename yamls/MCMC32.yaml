@@ -1,0 +1,312 @@
+debug: false
+likelihood:
+  bao.sdss_dr16_baoplus_elg: null
+  bao.sdss_dr16_baoplus_lrg: null
+  bao.sdss_dr16_baoplus_lyauto: null
+  bao.sdss_dr16_baoplus_lyxqso: null
+  bao.sdss_dr16_baoplus_qso: null
+  des_y3.cosmic_shear:
+    IA_model: 1
+    IA_redshift_evolution: 3
+    accuracyboost: 1.0
+    data_file: des_y3_real.dataset
+    integration_accuracy: 1
+    kmax_boltzmann: 5.0
+    non_linear_emul: 2
+    path: ./external_modules/data/des_y3
+output: ./projects/cs2-project/chains/MCMC32/MCMC32
+params:
+  A:
+    derived: 'lambda As: 1e9*As'
+    latex: 10^9 A_\mathrm{s}
+  As:
+    latex: A_\mathrm{s}
+    value: 'lambda logA: 1e-10*np.exp(logA)'
+  DES_A1_1:
+    latex: A_\mathrm{1-IA,DES}^1
+    prior:
+      max: 5
+      min: -5
+    proposal: 0.5
+    ref:
+      dist: norm
+      loc: 0.7
+      scale: 0.5
+  DES_A1_2:
+    latex: A_\mathrm{1-IA,DES}^2
+    prior:
+      max: 5
+      min: -5
+    proposal: 0.5
+    ref:
+      dist: norm
+      loc: -1.7
+      scale: 0.5
+  DES_A2_1:
+    latex: A_\mathrm{2-IA,DES}^1
+    prior:
+      max: 5
+      min: -5
+    proposal: 0.5
+    ref:
+      dist: norm
+      loc: -1.36
+      scale: 0.5
+  DES_A2_2:
+    latex: A_\mathrm{2-IA,DES}^2
+    prior:
+      max: 5
+      min: -5
+    proposal: 0.5
+    ref:
+      dist: norm
+      loc: -2.5
+      scale: 0.5
+  DES_BTA_1:
+    prior:
+      max: 2
+      min: 0
+    proposal: 0.1
+    ref:
+      dist: norm
+      loc: 1
+      scale: 0.15
+  DES_DZ_S1:
+    latex: \Delta z_\mathrm{s,DES}^1
+    prior:
+      dist: norm
+      loc: 0.0
+      scale: 0.018
+    proposal: 0.005
+    ref:
+      dist: norm
+      loc: 0.0
+      scale: 0.018
+  DES_DZ_S2:
+    latex: \Delta z_\mathrm{s,DES}^2
+    prior:
+      dist: norm
+      loc: 0.0
+      scale: 0.015
+    proposal: 0.005
+    ref:
+      dist: norm
+      loc: 0.0
+      scale: 0.015
+  DES_DZ_S3:
+    latex: \Delta z_\mathrm{s,DES}^3
+    prior:
+      dist: norm
+      loc: 0.0
+      scale: 0.011
+    proposal: 0.005
+    ref:
+      dist: norm
+      loc: 0.0
+      scale: 0.011
+  DES_DZ_S4:
+    latex: \Delta z_\mathrm{s,DES}^4
+    prior:
+      dist: norm
+      loc: 0.0
+      scale: 0.017
+    proposal: 0.005
+    ref:
+      dist: norm
+      loc: 0.0
+      scale: 0.017
+  DES_M1:
+    latex: m_\mathrm{DES}^1
+    prior:
+      dist: norm
+      loc: -0.006
+      scale: 0.009
+    proposal: 0.004
+    ref:
+      dist: norm
+      loc: -0.006
+      scale: 0.009
+  DES_M2:
+    latex: m_\mathrm{DES}^2
+    prior:
+      dist: norm
+      loc: -0.02
+      scale: 0.008
+    proposal: 0.004
+    ref:
+      dist: norm
+      loc: -0.02
+      scale: 0.008
+  DES_M3:
+    latex: m_\mathrm{DES}^3
+    prior:
+      dist: norm
+      loc: -0.024
+      scale: 0.008
+    proposal: 0.004
+    ref:
+      dist: norm
+      loc: -0.024
+      scale: 0.008
+  DES_M4:
+    latex: m_\mathrm{DES}^4
+    prior:
+      dist: norm
+      loc: -0.037
+      scale: 0.008
+    proposal: 0.003
+    ref:
+      dist: norm
+      loc: -0.037
+      scale: 0.008
+  H0:
+    latex: H_0
+    prior:
+      max: 100
+      min: 20
+    proposal: 2
+    ref:
+      dist: norm
+      loc: 67
+      scale: 2
+  age:
+    latex: '{\rm{Age}}/\mathrm{Gyr}'
+  clamp:
+    derived: 'lambda As, tau: 1e9*As*np.exp(-2*tau)'
+    latex: 10^9 A_\mathrm{s} e^{-2\tau}
+  cs2_0:
+    value: 0.0
+  cs2_1:
+    latex: c_{s,1}^2
+    prior:
+      max: 1
+      min: -1
+    proposal: 0.15
+  logA:
+    drop: true
+    latex: \log(10^{10} A_\mathrm{s})
+    prior:
+      max: 3.91
+      min: 1.61
+    proposal: 0.001
+    ref:
+      dist: norm
+      loc: 3.05
+      scale: 0.001
+  mnu:
+    renames: mnu
+    value: 0.06
+  ns:
+    latex: n_\mathrm{s}
+    prior:
+      max: 1.2
+      min: 0.8
+    proposal: 0.002
+    ref:
+      dist: norm
+      loc: 0.965
+      scale: 0.004
+  omegab:
+    derived: 'lambda omegabh2, H0: omegabh2/((H0/100)**2)'
+    latex: \Omega_\mathrm{b}
+  omegabh2:
+    latex: \Omega_\mathrm{b} h^2
+    prior:
+      max: 0.1
+      min: 0.005
+    proposal: 0.0001
+    ref:
+      dist: norm
+      loc: 0.0224
+      scale: 0.0001
+  omegac:
+    derived: 'lambda omegach2, H0: omegach2/((H0/100)**2)'
+    latex: \Omega_\mathrm{c}
+  omegach2:
+    latex: \Omega_\mathrm{c} h^2
+    prior:
+      max: 0.99
+      min: 0.001
+    proposal: 0.0005
+    ref:
+      dist: norm
+      loc: 0.12
+      scale: 0.001
+  omegal:
+    latex: \Omega_\Lambda
+  omegam:
+    latex: \Omega_\mathrm{m}
+  omegamh2:
+    derived: 'lambda omegam, H0: omegam*(H0/100)**2'
+    latex: \Omega_\mathrm{m} h^2
+  omegan:
+    derived: 'lambda omegan2, H0: omegan2/((H0/100)**2)'
+    latex: \Omega_\mathrm{\\nu}
+  omegan2:
+    latex: \Omega_\mathrm{\\nu} h^2
+  rdrag:
+    latex: r_\mathrm{drag}
+  s8h5:
+    derived: 'lambda sigma8, H0: sigma8*(H0*1e-2)**(-0.5)'
+    latex: \sigma_8/h^{0.5}
+  s8omegamp25:
+    derived: 'lambda sigma8, omegam: sigma8*omegam**0.25'
+    latex: \sigma_8 \Omega_\mathrm{m}^{0.25}
+  s8omegamp5:
+    derived: 'lambda sigma8, omegam: sigma8*omegam**0.5'
+    latex: \sigma_8 \Omega_\mathrm{m}^{0.5}
+  sigma8:
+    latex: \sigma_8
+  tau:
+    latex: \tau_\mathrm{reio}
+    value: 0.055
+  w:
+    value: 'lambda w0: w0'
+  w0:
+    latex: w_0
+    prior:
+      max: -0.333
+      min: -3
+    proposal: 0.2
+  w0pwa:
+    drop: true
+    prior:
+      max: 1
+      min: -3
+    proposal: 0.2
+  wa:
+    latex: w_a
+    value: 'lambda w0pwa, w0: w0pwa - w0'
+  yheused:
+    latex: Y_P^\mathrm{BBN}
+sampler:
+  mcmc:
+    Rminus1_cl_level: 0.95
+    Rminus1_cl_stop: 0.12
+    Rminus1_single_split: 4
+    Rminus1_stop: 0.01
+    burn_in: 0
+    covmat: null
+    covmat_params: null
+    drag: false
+    learn_proposal: true
+    learn_proposal_Rminus1_max: 4.0
+    learn_proposal_Rminus1_max_early: 30.0
+    learn_proposal_Rminus1_min: 0.035
+    max_samples: .inf
+    max_tries: 3000
+    measure_speeds: true
+    oversample_power: 0
+    oversample_thin: true
+stop_at_error: false
+theory:
+  camb:
+    extra_args:
+      AccuracyBoost: 1.05
+      cs2_type: 1
+      dark_energy_model: ppf
+      nnu: 3.046
+      num_massive_neutrinos: 1
+    path: ./external_modules/code/CAMB-cs2
+    use_renames: true
+timing: true
