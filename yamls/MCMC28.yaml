@@ -107,14 +107,7 @@ params:
     value: 0.06
     renames: mnu
   tau:
-    prior:
-      min: 0.01
-      max: 0.8
-    ref:
-      dist: norm
-      loc: 0.055
-      scale: 0.006
-    proposal: 0.003
+    value: 0.055
     latex: \tau_\mathrm{reio}
   # ---------- Derived params -------------
   omegal:
