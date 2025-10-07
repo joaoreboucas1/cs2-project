@@ -13,9 +13,10 @@
 
 YAML=./projects/cs2-project/yamls/MCMC${SLURM_ARRAY_TASK_ID}.yaml
 
-echo "Job started in `hostname`"
+echo "Job started in `hostname` at `date`"
 
 cd ~/cocoa/Cocoa
+conda init bash
 conda activate cocoa
 source start_cocoa.sh
 
@@ -29,3 +30,5 @@ export OPENBLAS_NUM_THREADS=${SLURM_CPUS_PER_TASK}
 export NUMEXPR_NUM_THREADS=${SLURM_CPUS_PER_TASK}
 
 mpirun -n ${SLURM_NTASKS_PER_NODE} --mca btl tcp,self --bind-to core --map-by socket:PE=${OMP_NUM_THREADS} cobaya-run ${YAML} -r
+
+echo "Job ended at `date`"
