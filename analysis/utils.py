@@ -1,3 +1,4 @@
+import numpy as np
 import getdist
 
 DEFAULT_GETDIST_SETTINGS = {
@@ -9,6 +10,7 @@ colors = ["#1b9e77", "#d95f02", "#7570b3", "#e7298a", "#66a61e"]
 
 def load_chain(index, settings=DEFAULT_GETDIST_SETTINGS):
     chain = getdist.loadMCSamples(f"../chains/MCMC{index}/MCMC{index}", settings=settings)
+    chain.addDerived(chain["sigma8"]*np.sqrt(chain["omegam"]/0.3), name="S8", label="S_8")
     for i in range(4):
         if chain.paramNames.hasParam(f"log10_cs2_{i}"): chain.paramNames.parWithName(f"log10_cs2_{i}").label = rf"\log_{{10}}(c_{{s,{i}}}^2)"
     return chain
