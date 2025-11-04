@@ -92,6 +92,8 @@ params:
       scale: 0.05
     proposal: 0.05
     latex: w_{0,\mathrm{DE}}
+  w0:
+    value: 'lambda w: w'
   mnu:
     value: 0.06
   tau:
@@ -388,7 +390,7 @@ params:
 
 theory:
   camb:
-    path: ./external_modules/code/CAMB
+    path: ./external_modules/code/CAMB-cs2
     use_renames: True
     extra_args:
       halofit_version: takahashi
@@ -400,6 +402,7 @@ theory:
       accurate_massive_neutrino_transfers: false
       k_per_logint: 10
       kmax: 5
+      cs2_type: 0
 
 sampler:
   mcmc:

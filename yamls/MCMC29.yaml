@@ -92,6 +92,8 @@ params:
       scale: 0.05
     proposal: 0.05
     latex: w_{0,\mathrm{DE}}
+  w0:
+    value: 'lambda w: w'
   mnu:
     value: 0.06
   tau:
