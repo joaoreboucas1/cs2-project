@@ -25,7 +25,7 @@ if __name__ == "__main__":
             print(f"Downloading chains {indices}")
             for i in indices:
                 proc = subprocess.run([
-                    "scp", "-r", "-P", "13900", f"joaoreboucas@che.cbpf.br:{PATH}/MCMC{i}", "./chains/"
+                    "scp", "-r", "-P", "13900", f"joaoreboucas@che.cbpf.br:{PATH_TEST}/EXAMPLE_MCMC{i}*", "./chains_test/"
                 ])
                 if proc.returncode != 0: print(f"ERROR downloading chain {i}")
         case default:
