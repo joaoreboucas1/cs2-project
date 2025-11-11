@@ -17,14 +17,12 @@ echo "Job started in `hostname` at `date`"
 
 # NOTE: sometimes `source start_cocoa.sh` fails if many jobs are loaded simultaneously.
 # This sleep prevents bugs from happening
-sleep $(( 10 + SLURM_ARRAY_TASK_ID*20 ))
+# sleep $(( 10 + SLURM_ARRAY_TASK_ID*20 ))
 
-cd ~/cocoa/Cocoa
+cd ~/cocoa2/Cocoa
 conda init bash
-conda activate cocoa
+conda activate cocoa2
 source start_cocoa.sh
-
-
 
 export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK}
 export OMP_PROC_BIND=close

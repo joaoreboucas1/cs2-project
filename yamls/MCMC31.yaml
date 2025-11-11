@@ -439,7 +439,7 @@ sampler:
     blocking:
       - [1,
           [
-            As_1e9, ns, H0, omegab, omegam, w0pwa, w
+            As_1e9, ns, H0, omegab, omegam, w0pwa, w, cs2_0
           ]
         ]
       - [2,
@@ -459,4 +459,4 @@ sampler:
     burn_in: 0
     Rminus1_single_split: 4
 
-output: ./projects/cs2_project/chains/MCMC30/MCMC30
+output: ./projects/cs2_project/chains/MCMC31/MCMC31
