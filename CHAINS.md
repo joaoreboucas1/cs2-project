@@ -23,3 +23,6 @@
 26 | w0wa | cs2w | eBOSS DR16 RSD + ACT DR6 Lensing | cs2,0=1
 27 | w0wa | cs2w | eBOSS DR16 RSD + ACT DR6 Lensing | cs2,0=0
 28 | w0wa | cs2w | eBOSS DR16 RSD + ACT DR6 Lensing
+29 | w0wa | cs2q | eBOSS DR16 RSD + ACT DR6 Lensing + DES-Y3 3x2pt
+30 | w0wa | cs2c | eBOSS DR16 RSD + ACT DR6 Lensing + DES-Y3 3x2pt
+31 | w0wa | cs2w | eBOSS DR16 RSD + ACT DR6 Lensing + DES-Y3 3x2pt | cs2,1=0
