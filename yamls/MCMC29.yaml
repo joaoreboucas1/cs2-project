@@ -453,4 +453,4 @@ sampler:
     burn_in: 0
     Rminus1_single_split: 4
 
-output: ./projects/cs2_project/chains/MCMC29/MCMC29
+output: ./projects/cs2-project/chains/MCMC29/MCMC29
