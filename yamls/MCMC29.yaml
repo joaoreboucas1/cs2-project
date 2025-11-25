@@ -24,6 +24,8 @@ likelihood:
     IA_redshift_evolution: 3
 
 params:
+  cs2_0:
+    value: 1.0
   As_1e9:
     prior:
       min: 0.5
