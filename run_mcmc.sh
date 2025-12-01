@@ -7,7 +7,6 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=4
 #SBATCH --cpus-per-task=5
-#SBATCH --exclusive
 #SBATCH --mail-user=joao.reboucas@unesp.br
 #SBATCH --mail-type=ALL
 
