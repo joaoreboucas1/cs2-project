@@ -3,7 +3,7 @@ import sys
 import subprocess
 
 # scp -r -P 13900 joaoreboucas@che.cbpf.br:~/cocoa/Cocoa/projects/cs2-project/chains/ .
-PATH="~/cocoa2/Cocoa/projects/cs2_project/chains/"
+PATH="~/cocoa2/Cocoa/projects/cs2-project/chains/"
 if __name__ == "__main__":
     match len(sys.argv):
         case 1:
