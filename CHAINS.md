@@ -31,3 +31,11 @@
 34 | w0wa | cs2w | eBOSS DR16 RSD + ACT DR6 Lensing + DES-Y3 Shear + DESI + PanPlus | cs2,1=0
 35 | w0wa | cs2w | eBOSS DR16 RSD + ACT DR6 Lensing + DES-Y3 Shear + DESI + Union3 | cs2,1=0
 36 | w0wa | cs2w | eBOSS DR16 RSD + ACT DR6 Lensing + DES-Y3 Shear + DESI + DESY5 | cs2,1=0
+37 | w0wa | cs2q | Planck NPIPE TT+TE+EE+TPHI + eBOSS DR16 RSD + ACT DR6 Lensing + DES-Y3 Shear
+38 | w0wa | cs2c | Planck NPIPE TT+TE+EE+TPHI + eBOSS DR16 RSD + ACT DR6 Lensing + DES-Y3 Shear
+39 | w0wa | cs2w | Planck NPIPE TT+TE+EE+TPHI + eBOSS DR16 RSD + ACT DR6 Lensing + DES-Y3 Shear | cs2,1=0
+40 | w0wa | cs2q | Planck NPIPE TT+TE+EE+TPHI + eBOSS DR16 RSD + ACT DR6 Lensing + DES-Y3 Shear + DESI + PanPlus
+41 | w0wa | cs2c | Planck NPIPE TT+TE+EE+TPHI + eBOSS DR16 RSD + ACT DR6 Lensing + DES-Y3 Shear + DESI + PanPlus
+42 | w0wa | cs2w | Planck NPIPE TT+TE+EE+TPHI + eBOSS DR16 RSD + ACT DR6 Lensing + DES-Y3 Shear + DESI + PanPlus | cs2,1=0
+43 | w0wa | cs2w | Planck NPIPE TT+TE+EE+TPHI + eBOSS DR16 RSD + ACT DR6 Lensing + DES-Y3 Shear + DESI + Union3 | cs2,1=0
+44 | w0wa | cs2w | Planck NPIPE TT+TE+EE+TPHI + eBOSS DR16 RSD + ACT DR6 Lensing + DES-Y3 Shear + DESI + DESY5 | cs2,1=0
