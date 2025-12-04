@@ -16,10 +16,7 @@ likelihood:
   bao.sdss_dr16_baoplus_lyauto: null
   bao.sdss_dr16_baoplus_lyxqso: null
   bao.sdss_dr16_baoplus_qso: null
-  act_dr6_lenslike.ACTDR6LensLike:
-    lens_only: False
-    lmax: 4000
-    variant: act_baseline
+  
   des_y3.des_cosmic_shear:
     path: ./external_modules/data/des_y3
     data_file: des_y3_real.dataset
