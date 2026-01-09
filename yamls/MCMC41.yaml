@@ -58,25 +58,15 @@ params:
       scale: 0.01
     proposal: 0.01
     latex: n_\mathrm{s}
-  theta_MC_100:
+  H0:
     prior:
-      min: 0.5
-      max: 10
+      min: 20
+      max: 100
     ref:
       dist: norm
-      loc: 1.04109
-      scale: 0.001
-    proposal: 0.001
-    latex: 100\theta_\mathrm{MC}
-    drop: true
-    renames: theta
-  cosmomc_theta:
-    value: 'lambda theta_MC_100: 1.e-2*theta_MC_100'
-    derived: false
-  H0:
+      loc: 67
+      scale: 0.5
     latex: H_0
-    min: 20
-    max: 100
   omegab:
     prior:
       min: 0.03
@@ -370,7 +360,7 @@ sampler:
         ]
       - [20,
           [
-            DES_M1, DES_M2, DES_M3, DES_M4, 
+            DES_M1, DES_M2, DES_M3, DES_M4, 'cal217B', 'cal100A', 'cal100B', 'Atsz', 'xi', 'AdustT', 'beta_dustP', 'cal217A', 'Adusty', 'Aksz', 'beta_dustT', 'Acib', 'AdustP', 'Aradio', 'A_planck', 'beta_cib', 'cal143B', 
           ]
         ]
     max_tries: 10000
