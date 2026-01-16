@@ -330,7 +330,7 @@ theory:
 
 sampler:
   mcmc:
-    covmat: './projects/des_y3/EXAMPLE_MCMC2.covmat'
+    covmat:
     covmat_params:
     learn_proposal: True
     # Don't learn if convergence better than...
