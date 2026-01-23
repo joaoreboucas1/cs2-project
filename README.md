@@ -18,3 +18,6 @@ In `analysis/`, we perform the statistical analysis of the chains. The notebook 
 ## Dataset combinations
 DS1: P18+DESI+DESY5
 DS2: P18+DESI+DESY5+DESY3SHEAR
+
+## References
+- CAMB-cs2: https://github.com/joaoreboucas1/CAMB-cs2
