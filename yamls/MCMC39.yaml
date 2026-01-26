@@ -295,7 +295,7 @@ sampler:
     blocking:
       - [1,
           [
-            As_1e9, ns, H0, omegab, omegam, w0pwa, w, cs2_0
+            logA, ns, cosmomc_theta, omegabh2, omegach2, tau, w0pwa, w, cs2_0
           ]
         ]
       - [2,
