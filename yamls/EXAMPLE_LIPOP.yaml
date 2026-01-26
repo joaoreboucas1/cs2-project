@@ -80,15 +80,11 @@ params:
     value: 0.06
   tau:
     prior:
-      dist: norm
-      loc: 0.0544
-      scale: 0.0073
-    ref:
-      dist: norm
-      loc: 0.055
-      scale: 0.006
-    proposal: 0.003
-    latex: \tau_\mathrm{reio}
+      min: 0.01
+      max: 0.15
+    ref: 0.055
+    proposal: 0.007
+    latex: \tau
   w0pwa:
     prior:
       min: -5 
