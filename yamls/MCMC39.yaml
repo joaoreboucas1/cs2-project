@@ -272,7 +272,7 @@ theory:
 
 sampler:
   mcmc:
-    covmat:
+    covmat: ./projects/cs2-project/hillipop_bao.covmat
     covmat_params:
     learn_proposal: True
     # Don't learn if convergence better than...
