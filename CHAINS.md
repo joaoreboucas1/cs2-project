@@ -39,3 +39,5 @@
 42 | w0wa | cs2w | Planck NPIPE TT+TE+EE+TPHI + eBOSS DR16 RSD + ACT DR6 Lensing + DES-Y3 Shear + DESI + PanPlus | cs2,1=0
 43 | w0wa | cs2w | Planck NPIPE TT+TE+EE+TPHI + eBOSS DR16 RSD + ACT DR6 Lensing + DES-Y3 Shear + DESI + Union3 | cs2,1=0
 44 | w0wa | cs2w | Planck NPIPE TT+TE+EE+TPHI + eBOSS DR16 RSD + ACT DR6 Lensing + DES-Y3 Shear + DESI + DESY5 | cs2,1=0
+45 | w0wa | cs2mg | Planck Lipop + DESI DR2 BAO + PanPlus | alpha_K const
+46 | w0wa | cs2mg | Planck Lipop + DESI DR2 BAO + PanPlus | alpha_K prop to omega_de
