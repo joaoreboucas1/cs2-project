@@ -161,7 +161,7 @@ theory:
 
 sampler:
   mcmc:
-    covmat:
+    covmat: ./projects/cs2-project/desi_lipop_sn.covmat
     covmat_params:
     learn_proposal: True
     learn_proposal_Rminus1_min: 0.035
