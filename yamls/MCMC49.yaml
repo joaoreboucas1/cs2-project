@@ -19,7 +19,7 @@ likelihood:
     path: ./external_modules/data/sn_data   
 
 params:
-  w0: -1
+  w: -1
   wa: 0
   logA:
     prior:

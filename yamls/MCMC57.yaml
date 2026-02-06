@@ -53,14 +53,14 @@ params:
       max: 1
     proposal: 0.2
     drop: true
-  w0:
+  w:
     prior:
       min: -3
       max: -0.333
     proposal: 0.2
     latex: w_0
   wa:
-    value: 'lambda w0pwa, w0: w0pwa - w0'
+    value: 'lambda w0pwa, w: w0pwa - w'
     latex: w_a
   logA:
     prior:

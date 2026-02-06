@@ -29,7 +29,7 @@ likelihood:
 
 params:
   cs2_0: 1
-  w0:
+  w:
     prior:
       min: -3
       max: -0.333
@@ -42,7 +42,7 @@ params:
     proposal: 0.2
     drop: true
   wa:
-    value: 'lambda w0pwa, w0: w0pwa - w0'
+    value: 'lambda w0pwa, w: w0pwa - w'
     latex: w_a
   logA:
     prior:

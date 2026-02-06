@@ -41,7 +41,7 @@ likelihood:
   bao.sdss_dr16_baoplus_qso: null
 
 params:
-  w0: -1
+  w: -1
   wa: 0
   logA:
     prior:
