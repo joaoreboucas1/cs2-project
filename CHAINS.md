@@ -39,3 +39,18 @@
 42 | w0wa | cs2w | Planck NPIPE TT+TE+EE+TPHI + eBOSS DR16 RSD + ACT DR6 Lensing + DES-Y3 Shear + DESI + PanPlus | cs2,1=0
 43 | w0wa | cs2w | Planck NPIPE TT+TE+EE+TPHI + eBOSS DR16 RSD + ACT DR6 Lensing + DES-Y3 Shear + DESI + Union3 | cs2,1=0
 44 | w0wa | cs2w | Planck NPIPE TT+TE+EE+TPHI + eBOSS DR16 RSD + ACT DR6 Lensing + DES-Y3 Shear + DESI + DESY5 | cs2,1=0
+45 | w0wa | cs2mg | Baseline | alpha_K const
+46 | w0wa | cs2mg | Baseline | alpha_K prop to omega_de
+47 | w0wa | cs2f | Baseline
+48 | w0wa | cs21 | Baseline
+49 | lcdm | cs21 | Baseline
+50 | w0wa | cs2mg | Growth | alpha_K const
+51 | w0wa | cs2mg | Growth | alpha_K prop to omega_de
+52 | w0wa | cs2f | Growth
+53 | w0wa | cs21 | Growth
+54 | lcdm | cs21 | Growth
+55 | w0wa | cs2mg | Baseline+Growth | alpha_K const
+56 | w0wa | cs2mg | Baseline+Growth | alpha_K prop to omega_de
+57 | w0wa | cs2f | Baseline+Growth
+58 | w0wa | cs21 | Baseline+Growth
+59 | lcdm | cs21 | Baseline+Growth

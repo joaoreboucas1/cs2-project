@@ -18,9 +18,10 @@ DEFAULT_GETDIST_SETTINGS = {
 
 def load_chain(index, settings=DEFAULT_GETDIST_SETTINGS):
     chain = getdist.loadMCSamples(f"../chains/MCMC{index}/MCMC{index}", settings=settings)
+    if not chain.paramNames.hasParam("omegam"):
+        omegam = (chain["omegach2"]+chain["omegabh2"]+0.06/93.15)/(chain["H0"]/100)**2
+        chain.addDerived(omegam, name="omegam", label="\Omega_m")
     chain.addDerived(chain["sigma8"]*np.sqrt(chain["omegam"]/0.3), name="S8", label="S_8")
-    for i in range(4):
-        if chain.paramNames.hasParam(f"log10_cs2_{i}"): chain.paramNames.parWithName(f"log10_cs2_{i}").label = rf"\log_{{10}}(c_{{s,{i}}}^2)"
     return chain
 
 # ---- Preprocessing `CHAINS.md` for reference -----
