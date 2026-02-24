@@ -59,11 +59,11 @@ def get_alpha_K(aktype, a, bg, alpha_B, cs2, alpha_K_0):
             w_de = bg.w0 + bg.wa*(1 - a)
             return omega_de*(1 + w_de)/cs2
         case alphaKtype.CUGAL:
-            # NOTE: (H/H0)^2 = rhotot/rho_cr_0
+            # NOTE: E^2 = (H/H0)^2 = rhotot/rho_cr_0
             rhode  = rho_de(a, bg)
             rhotot = rho_m(a, bg) + rho_gamma(a, bg) + rhode
             omega_de = rhode/rhotot
-            return alpha_K_0*omega_de/rhotot + 6*alpha_B
+            return alpha_K_0*omega_de/rhotot**2 + 6*alpha_B
         case _:
             raise Exception("Unknown alpha_K parametrization")
 
@@ -91,7 +91,7 @@ def solve_alpha_B(aktype, omega_m, w0, wa, cs2, alpha_K_0, alpha_B_init=0):
     alpha_K[0] = get_alpha_K(aktype, a[0], bg, alpha_B[0], cs2, alpha_K_0)
     mu[0]      = 1 + alpha_B[0]**2/2/(alpha_K[0] + 1.5*alpha_B[0]**2)/cs2
     for i in range(N):
-        if alpha_B[i]**2 > 1e6*alpha_K[i]:
+        if alpha_B[i]**2 > 1e6*abs(alpha_K[i]):
             # JVR NOTE: for many cases, \alpha_B just blows up and in Python it becomes \inf.
             # For calculating \mu, this is not a problem, since \mu has a well-defined limit when \alpha_B -> \inf
             # In practice, I enforce this with the threshold defined above in the `if` statement
