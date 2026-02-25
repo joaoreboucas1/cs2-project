@@ -164,7 +164,7 @@ theory:
       nnu: 3.046
       dark_energy_model: ppf
       use_cs2: True
-      alpha_K_parametrization: 1
+      alpha_K_parametrization: 2
 
 sampler:
   mcmc:
