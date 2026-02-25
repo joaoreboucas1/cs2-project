@@ -3,11 +3,11 @@
     Author: João Rebouças, December 2025
 """
 
-from enum import Enum
+from enum import IntEnum
 import numpy as np
 from scipy.integrate import solve_ivp
 
-omega_r = 2.5e-5
+omega_r = 2.5e-5*(1 + 3.044 * 7/8 * (4/11)**(4/3))
 
 class Bg():
     def __init__(self, omega_m, w0, wa):
@@ -36,7 +36,7 @@ def get_bg_funcs(a, bg):
     rho_plus_p_no_de_over_rhotot = ((4/3)*rhog + rhom)/rhotot
     return w_de, w_no_de, rhotot, rho_plus_p_no_de_over_rhotot, omega_de
 
-class alphaKtype(Enum):
+class alphaKtype(IntEnum):
     CONST = 1
     OMEGA = 2
     QUINT = 3
