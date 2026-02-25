@@ -44,13 +44,8 @@
 47 | w0wa | cs2f | Baseline
 48 | w0wa | cs21 | Baseline
 49 | lcdm | cs21 | Baseline
-50 | w0wa | cs2mg | Growth | alpha_K const
-51 | w0wa | cs2mg | Growth | alpha_K prop to omega_de
-52 | w0wa | cs2f | Growth
-53 | w0wa | cs21 | Growth
-54 | lcdm | cs21 | Growth
-55 | w0wa | cs2mg | Baseline+Growth | alpha_K const
-56 | w0wa | cs2mg | Baseline+Growth | alpha_K prop to omega_de
-57 | w0wa | cs2f | Baseline+Growth
-58 | w0wa | cs21 | Baseline+Growth
-59 | lcdm | cs21 | Baseline+Growth
+50 | w0wa | cs2mg | Baseline | alpha_K cugal
+51 | w0wa | cs2mg | Baseline | alpha_K kess
+52 | w0waq | cs2mg | Baseline | alpha_K kess
+53 | w0wa | cs2mg | Baseline | alpha_K quint
+54 | w0waq | cs2mg | Baseline | alpha_K quint

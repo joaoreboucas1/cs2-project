@@ -4,36 +4,27 @@ stop_at_error: False
 output: ./projects/cs2-project/chains/MCMC50/MCMC50
 
 likelihood:
-  # ACT DR6 CMB Lensing
-  act_dr6_lenslike.ACTDR6LensLike:
-    lens_only: False
-    lmax: 4000
-    variant: act_baseline 
-  # DES-Y3 Cosmic Shear
-  des_y3.des_cosmic_shear:
-    path: ./external_modules/data/des_y3
-    data_file: des_y3_real.dataset
-    accuracyboost: 1.0
-    integration_accuracy: 0
-    kmax_boltzmann: 5.0
-    # 1 EE2, 2 Halofit
-    non_linear_emul: 2
-    IA_model: 1
-    IA_redshift_evolution: 3
-  # eBOSS RSD
-  bao.sdss_dr16_baoplus_elg: null
-  bao.sdss_dr16_baoplus_lrg: null
-  bao.sdss_dr16_baoplus_lyauto: null
-  bao.sdss_dr16_baoplus_lyxqso: null
-  bao.sdss_dr16_baoplus_qso: null  
+  # CMB
+  planck_2020_hillipop.TTTEEE:
+    data_folder: planck/hillipop
+  planck_2018_lowl.TT:
+    path: ./external_modules
+  planck_2020_lollipop.lowlEB:
+    data_folder: planck/lollipop
+  # BAO
+  bao.desi_dr2:
+    path: ./external_modules/data/
+  # SN1a
+  sn.desy5:
+    path: ./external_modules/data/sn_data   
 
 params:
   alpha_K_0:
     prior:
       min: 0
-      max: 3
-    proposal: 0.1
-    latex: \alpha_{K}
+      max: 50
+    proposal: 1
+    latex: \alpha_{K,0}
   cs2_0:
     prior:
       min: 0
@@ -173,7 +164,7 @@ theory:
       nnu: 3.046
       dark_energy_model: ppf
       use_cs2: True
-      alpha_K_parametrization: 0
+      alpha_K_parametrization: 1
 
 sampler:
   mcmc:
