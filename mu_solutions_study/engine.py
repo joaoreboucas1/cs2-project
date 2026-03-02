@@ -5,7 +5,6 @@
 
 from enum import IntEnum
 import numpy as np
-from scipy.integrate import solve_ivp
 
 omega_r = 2.5e-5*(1 + 3.044 * 7/8 * (4/11)**(4/3))
 
