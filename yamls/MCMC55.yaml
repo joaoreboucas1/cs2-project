@@ -16,29 +16,7 @@ likelihood:
     path: ./external_modules/data/
   # SN1a
   sn.desy5:
-    path: ./external_modules/data/sn_data 
-  # ACT DR6 CMB Lensing
-  act_dr6_lenslike.ACTDR6LensLike:
-    lens_only: False
-    lmax: 4000
-    variant: act_baseline 
-  # DES-Y3 Cosmic Shear
-  des_y3.des_cosmic_shear:
-    path: ./external_modules/data/des_y3
-    data_file: des_y3_real.dataset
-    accuracyboost: 1.0
-    integration_accuracy: 0
-    kmax_boltzmann: 5.0
-    # 1 EE2, 2 Halofit
-    non_linear_emul: 2
-    IA_model: 1
-    IA_redshift_evolution: 3
-  # eBOSS RSD
-  bao.sdss_dr16_baoplus_elg: null
-  bao.sdss_dr16_baoplus_lrg: null
-  bao.sdss_dr16_baoplus_lyauto: null
-  bao.sdss_dr16_baoplus_lyxqso: null
-  bao.sdss_dr16_baoplus_qso: null  
+    path: ./external_modules/data/sn_data   
 
 params:
   alpha_K_0:
@@ -50,8 +28,8 @@ params:
   cs2_0:
     prior:
       min: 0
-      max: 50
-    proposal: 1
+      max: 1
+    proposal: 0.1
     latex: c_s^2
   w0pwa:
     prior:
@@ -59,14 +37,14 @@ params:
       max: 1
     proposal: 0.2
     drop: true
-  w:
+  w0:
     prior:
       min: -3
       max: -0.333
     proposal: 0.2
     latex: w_0
   wa:
-    value: 'lambda w0pwa, w: w0pwa - w'
+    value: 'lambda w0pwa, w0: w0pwa - w0'
     latex: w_a
   logA:
     prior:
