@@ -29,18 +29,29 @@ params:
     prior:
       min: 0
       max: 1
+    ref:
+      min: 0
+      max: 0.5
     proposal: 0.1
     latex: c_s^2
   w0pwa:
     prior:
       min: -3
       max: 1
+    ref:
+      dist: norm
+      loc: -1.5
+      scale: 0.3
     proposal: 0.2
     drop: true
   w:
     prior:
       min: -3
       max: -0.333
+    ref:
+      dist: norm
+      loc: -0.8
+      scale: 0.1
     proposal: 0.2
     latex: w_0
   wa:

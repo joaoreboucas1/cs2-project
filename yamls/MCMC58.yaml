@@ -19,12 +19,6 @@ likelihood:
     path: ./external_modules/data/sn_data   
 
 params:
-  alpha_K_0:
-    prior:
-      min: 0
-      max: 50
-    proposal: 1
-    latex: \alpha_{K,0}
   cs2_0:
     prior:
       min: 0
