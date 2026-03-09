@@ -41,6 +41,8 @@ class alphaKtype(IntEnum):
     QUINT = 3
     CUGAL = 4
     PROP  = 5
+    CUGAL_MOCHI = 6
+    DKIN_JOAO = 7
 
 def get_alpha_K(aktype, a, bg, alpha_B, cs2, alpha_K_0):
     match aktype:
@@ -56,13 +58,31 @@ def get_alpha_K(aktype, a, bg, alpha_B, cs2, alpha_K_0):
             rhotot = rho_m(a, bg) + rho_gamma(a, bg) + rhode
             omega_de = rhode/rhotot
             w_de = bg.w0 + bg.wa*(1 - a)
-            return omega_de*(1 + w_de)/cs2
+            return alpha_K_0*omega_de*(1 + w_de)/cs2
         case alphaKtype.CUGAL:
             # NOTE: E^2 = (H/H0)^2 = rhotot/rho_cr_0
+            # Our rhotot is already in units of the current critical density
             rhode  = rho_de(a, bg)
             rhotot = rho_m(a, bg) + rho_gamma(a, bg) + rhode
             omega_de = rhode/rhotot
             return alpha_K_0*omega_de/rhotot**2 + 6*alpha_B
+        case alphaKtype.PROP:
+            return alpha_K_0*3*alpha_B
+        case alphaKtype.CUGAL_MOCHI:
+            # NOTE: E^2 = (H/H0)^2 = rhotot/rho_cr_0
+            rhode  = rho_de(a, bg)
+            rhotot = rho_m(a, bg) + rho_gamma(a, bg) + rhode
+            omega_de = rhode/rhotot
+            return alpha_K_0*6*omega_de/rhotot**2
+        case alphaKtype.DKIN_JOAO:
+            # D_kin = lambda*d\ln(H)/d\ln(a) = lambda*(-3*(1 + w_tot)/2)
+            rhode  = rho_de(a, bg)
+            wde    = bg.w0 + bg.wa*(1 - a)
+            rhotot = rho_m(a, bg) + rho_gamma(a, bg) + rhode
+            Ptot   = rho_gamma(a, bg)/3 + wde*rhode
+            w_tot  = Ptot/rhotot
+            D_kin  = alpha_K_0*(-1.5)*(1 + w_tot)
+            return D_kin - 1.5*alpha_B**2
         case _:
             raise Exception("Unknown alpha_K parametrization")
 
@@ -90,7 +110,7 @@ def solve_alpha_B(aktype, omega_m, w0, wa, cs2, alpha_K_0, alpha_B_init=0):
     alpha_K[0] = get_alpha_K(aktype, a[0], bg, alpha_B[0], cs2, alpha_K_0)
     mu[0]      = 1 + alpha_B[0]**2/2/(alpha_K[0] + 1.5*alpha_B[0]**2)/cs2
     for i in range(N):
-        if alpha_B[i]**2 > 1e6*abs(alpha_K[i]):
+        if abs(alpha_B[i]) > 1e6:
             # JVR NOTE: for many cases, \alpha_B just blows up and in Python it becomes \inf.
             # For calculating \mu, this is not a problem, since \mu has a well-defined limit when \alpha_B -> \inf
             # In practice, I enforce this with the threshold defined above in the `if` statement

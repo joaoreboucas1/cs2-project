@@ -7,7 +7,7 @@ The solutions still depend on the specific form of $\alpha_K$ which is left unde
 - Proportional to $\Omega_\mathrm{DE}$
 - Quintessence
 - Cubic Galileon
-- Proportional to $\alpha_B$ (DEPRECATED)
+- Proportional to $\alpha_B$
 
 The algorithm that solves Equation 2.18 and calculates $\mu$ is given in `engine.py`.
 
