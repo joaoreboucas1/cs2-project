@@ -25,15 +25,13 @@ def rho_gamma(a, bg):
     return omega_r*a**-4
 
 def get_bg_funcs(a, bg):
-    w_de     = bg.w0 + bg.wa*(1-a)
-    rhog     = rho_gamma(a, bg)
-    rhom     = rho_m(a, bg)
-    rhode    = rho_de(a, bg)
-    rhotot   = rhog + rhode + rhom
-    w_no_de  = (rhog/3 + w_de*rhode)/rhotot
-    omega_de = rhode/rhotot
-    rho_plus_p_no_de_over_rhotot = ((4/3)*rhog + rhom)/rhotot
-    return w_de, w_no_de, rhotot, rho_plus_p_no_de_over_rhotot, omega_de
+    wde    = bg.w0 + bg.wa*(1-a)
+    rhog   = rho_gamma(a, bg)
+    rhom   = rho_m(a, bg)
+    rhode  = rho_de(a, bg)
+    rhotot = rhog + rhode + rhom
+    wtot   = (rhog/3 + wde*rhode)/rhotot
+    return wde, rhode, wtot, rhotot
 
 class alphaKtype(IntEnum):
     CONST = 1
@@ -88,9 +86,9 @@ def get_alpha_K(aktype, a, bg, alpha_B, cs2, alpha_K_0):
 
 def deriv(loga, alpha_B, bg, aktype, alpha_K_0, cs2):
     a = np.exp(loga)
-    w_de, w_no_de, rhotot, rho_plus_p_no_de_over_rhotot, omega_de = get_bg_funcs(a, bg)
+    wde, rhode, wtot, rhotot = get_bg_funcs(a, bg)
     alpha_K = get_alpha_K(aktype, a, bg, alpha_B, cs2, alpha_K_0)
-    return cs2*(alpha_K + 1.5*alpha_B**2) + (alpha_B - 2)*(1.5*(1 + w_no_de) + 0.5*alpha_B) + 3*rho_plus_p_no_de_over_rhotot
+    return cs2*(alpha_K + 1.5*alpha_B**2) + (alpha_B - 2)*(1.5*(1 + wtot) + 0.5*alpha_B) + 3*(1 + wtot) - 3*(1 + wde)*rhode
 
 def solve_alpha_B(aktype, omega_m, w0, wa, cs2, alpha_K_0, alpha_B_init=0):
     bg = Bg(omega_m=omega_m, w0=w0, wa=wa)
