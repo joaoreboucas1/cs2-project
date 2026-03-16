@@ -37,14 +37,14 @@ class alphaKtype(IntEnum):
     CONST = 1
     OMEGA = 2
     QUINT = 3
-    CUGAL = 4
+    CUGAL_MOCHI = 4
     PROP  = 5
-    CUGAL_MOCHI = 6
+    CUGAL = 6
     DKIN_JOAO = 7
 
 def get_alpha_K(aktype, a, bg, alpha_B, cs2, alpha_K_0):
     match aktype:
-        case alphaKtype.CONST: 
+        case alphaKtype.CONST:
             return alpha_K_0
         case alphaKtype.OMEGA:
             rhode  = rho_de(a, bg)
@@ -93,7 +93,7 @@ def deriv(loga, alpha_B, bg, aktype, alpha_K_0, cs2):
 
 def solve_alpha_B(aktype, omega_m, w0, wa, cs2, alpha_K_0, alpha_B_init=0):
     bg = Bg(omega_m=omega_m, w0=w0, wa=wa)
-    
+
     N       = 200 # Number of steps
     a_ini   = 1e-5
     a_final = 1
@@ -128,10 +128,10 @@ def solve_alpha_B(aktype, omega_m, w0, wa, cs2, alpha_K_0, alpha_B_init=0):
         if alpha_B[i+1] == 0: mu[i+1] = 1
         else:
             mu[i+1]  = 1 + alpha_B[i+1]**2/(2*cs2*D_kin) if D_kin != 0 else np.inf
-        
+
     return loga*np.log10(np.e), alpha_B, alpha_K, mu
 
-    
+
 def study_alpha_B(alpha_K, cs2, omega_m, w0, wa):
     # Returns the derivative of alpha_B, evaluated in a grid of alpha_B, log(a)
     # Useful when assessing the stability of the system
@@ -169,7 +169,7 @@ def plot_scatter(aktype, priors, fig_path):
 
     gr_threshold = 0.05
     extreme_threshold = 0.5
-    
+
     num_samples = 4_000
     samples_params = np.random.rand(num_samples, len(priors)) * (high - low)[None, :] + low[None, :]
     samples = []
@@ -192,7 +192,7 @@ def plot_scatter(aktype, priors, fig_path):
             else: ax.set_xticklabels([])
             if col == 0:             ax.set_ylabel(list(param_name_latex.values())[row])
             else: ax.set_yticklabels([])
-                
+
             if col >= row: ax.remove()
 
             ax.scatter(points[:, col], points[:, row], color=colors, s=1)

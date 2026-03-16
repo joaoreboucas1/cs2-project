@@ -50,7 +50,7 @@
 53 | w0wa | cs2mg | Baseline | alpha_K quint
 54 | w0waq | cs2mg | Baseline | alpha_K quint
 55 | w0wa | cs2mg | Baseline | alpha_K const, subluminal
-56 | w0wa | cs2mg | Baseline | alpha_K prop to omega_de, subluminal
-57 | w0wa | cs2mg | Baseline | alpha_K cugal, subluminal
-58 | w0wa | cs2mg | Baseline | alpha_K kess, subluminal
-59 | w0waq | cs2mg | Baseline | alpha_K kess, subluminal
+56 | w0wa | cs2mg | Baseline | alpha_K omega_de, subluminal
+57 | w0waq | cs2mg | Baseline | alpha_K kess, subluminal
+58 | w0wa | cs2mg | Baseline | alpha_K prop, subluminal
+59 | w0wa | cs2mg | Baseline | alpha_K cugal, subluminal

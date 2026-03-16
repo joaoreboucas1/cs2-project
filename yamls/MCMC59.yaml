@@ -19,26 +19,35 @@ likelihood:
     path: ./external_modules/data/sn_data   
 
 params:
+  alpha_K_0:
+    prior:
+      min: 0
+      max: 3
+    ref: 1
+    proposal: 0.1
+    latex: \alpha_{K,0}
   cs2_0:
     prior:
       min: 0
+      max: 1
+    ref:
+      min: 0.8
       max: 1
     proposal: 0.1
     latex: c_s^2
   w0pwa:
     prior:
-      min: -1
+      min: -3
       max: 1
+    ref: -1.458
     proposal: 0.2
     drop: true
   w:
     prior:
-      min: -1
+      min: -3
       max: -0.333
-    ref:
-      min: -1
-      max: -0.8
-    proposal: 0.1
+    ref: -0.838
+    proposal: 0.2
     latex: w_0
   wa:
     value: 'lambda w0pwa, w: w0pwa - w'
@@ -67,16 +76,25 @@ params:
       scale: 0.004
     proposal: 0.002
     latex: n_\mathrm{s}
-  H0:
+  theta_MC_100:
     prior:
-      min: 20
-      max: 100
+      min: 0.5
+      max: 10
     ref:
       dist: norm
-      loc: 67
-      scale: 2
-    proposal: 2
+      loc: 1.04109
+      scale: 0.001
+    proposal: 0.001
+    latex: 100\theta_\mathrm{MC}
+    drop: true
+    renames: theta
+  cosmomc_theta:
+    value: 'lambda theta_MC_100: 1.e-2*theta_MC_100'
+    derived: false
+  H0:
     latex: H_0
+    min: 20
+    max: 100
   omegabh2:
     prior:
       min: 0.005
@@ -161,7 +179,7 @@ theory:
       nnu: 3.046
       dark_energy_model: ppf
       use_cs2: True
-      alpha_K_parametrization: 2
+      alpha_K_parametrization: 3
 
 sampler:
   mcmc:

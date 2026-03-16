@@ -22,9 +22,9 @@ params:
   alpha_K_0:
     prior:
       min: 0
-      max: 50
-    proposal: 1
-    latex: \alpha_{K,0}
+      max: 3
+    proposal: 0.1
+    latex: \alpha_{K}
   cs2_0:
     prior:
       min: 0
@@ -38,20 +38,14 @@ params:
     prior:
       min: -3
       max: 1
-    ref:
-      dist: norm
-      loc: -1.5
-      scale: 0.3
+    ref: -1.458
     proposal: 0.2
     drop: true
   w:
     prior:
       min: -3
       max: -0.333
-    ref:
-      dist: norm
-      loc: -0.8
-      scale: 0.1
+    ref: -0.838
     proposal: 0.2
     latex: w_0
   wa:
@@ -81,16 +75,25 @@ params:
       scale: 0.004
     proposal: 0.002
     latex: n_\mathrm{s}
-  H0:
+  theta_MC_100:
     prior:
-      min: 20
-      max: 100
+      min: 0.5
+      max: 10
     ref:
       dist: norm
-      loc: 67
-      scale: 2
-    proposal: 2
+      loc: 1.04109
+      scale: 0.001
+    proposal: 0.001
+    latex: 100\theta_\mathrm{MC}
+    drop: true
+    renames: theta
+  cosmomc_theta:
+    value: 'lambda theta_MC_100: 1.e-2*theta_MC_100'
+    derived: false
+  H0:
     latex: H_0
+    min: 20
+    max: 100
   omegabh2:
     prior:
       min: 0.005
