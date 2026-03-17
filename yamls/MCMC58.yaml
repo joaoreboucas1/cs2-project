@@ -46,7 +46,7 @@ params:
     prior:
       min: -3
       max: -0.333
-    ref: -1
+    ref: -0.999
     proposal: 0.2
     latex: w_0
   wa:
