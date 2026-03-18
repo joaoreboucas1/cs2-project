@@ -115,7 +115,9 @@ params:
     proposal: 0.0005
     latex: \Omega_\mathrm{c} h^2
   mnu:
-    value: 0.06
+    value: 0
+  nnu:
+    value: 3.044
   tau:
     prior:
       min: 0.01
