@@ -117,8 +117,6 @@ params:
     latex: \Omega_\mathrm{c} h^2
   mnu:
     value: 0
-  nnu:
-    value: 3.044
   tau:
     prior:
       min: 0.01
@@ -177,8 +175,7 @@ theory:
     use_renames: True
     extra_args:
       AccuracyBoost: 1.05
-      num_massive_neutrinos: 1
-      nnu: 3.046
+      nnu: 3.044
       dark_energy_model: ppf
       use_cs2: True
       alpha_K_parametrization: 3
