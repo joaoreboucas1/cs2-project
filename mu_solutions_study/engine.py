@@ -42,7 +42,7 @@ class alphaKtype(IntEnum):
     CUGAL = 6
     DKIN_JOAO = 7
 
-def get_alpha_K(aktype, a, bg, alpha_B, cs2, alpha_K_0):
+def get_alpha_K(aktype, a, bg, alpha_B, cs2, cs2_a, alpha_K_0):
     match aktype:
         case alphaKtype.CONST:
             return alpha_K_0
@@ -56,7 +56,7 @@ def get_alpha_K(aktype, a, bg, alpha_B, cs2, alpha_K_0):
             rhotot = rho_m(a, bg) + rho_gamma(a, bg) + rhode
             omega_de = rhode/rhotot
             w_de = bg.w0 + bg.wa*(1 - a)
-            return alpha_K_0*omega_de*(1 + w_de)/cs2
+            return alpha_K_0*omega_de*(1 + w_de)/(cs2 + cs2_a*(1-a))
         case alphaKtype.CUGAL:
             # NOTE: E^2 = (H/H0)^2 = rhotot/rho_cr_0
             # Our rhotot is already in units of the current critical density
@@ -84,14 +84,14 @@ def get_alpha_K(aktype, a, bg, alpha_B, cs2, alpha_K_0):
         case _:
             raise Exception("Unknown alpha_K parametrization")
 
-def deriv(loga, alpha_B, bg, aktype, alpha_K_0, cs2):
+def deriv(loga, alpha_B, bg, aktype, alpha_K_0, cs2, cs2_a):
     a = np.exp(loga)
     wde, rhode, wtot, rhotot = get_bg_funcs(a, bg)
     d_lnH_d_lna = -1.5*(1 + wtot)
-    alpha_K = get_alpha_K(aktype, a, bg, alpha_B, cs2, alpha_K_0)
-    return cs2*(alpha_K + 1.5*alpha_B**2) + 0.5*alpha_B**2 - alpha_B*(d_lnH_d_lna + 1) - 3*(1 + wde)*rhode/rhotot
+    alpha_K = get_alpha_K(aktype, a, bg, alpha_B, cs2, cs2_a, alpha_K_0)
+    return (cs2 + cs2_a*(1-a))*(alpha_K + 1.5*alpha_B**2) + 0.5*alpha_B**2 - alpha_B*(d_lnH_d_lna + 1) - 3*(1 + wde)*rhode/rhotot
 
-def solve_alpha_B(aktype, omega_m, w0, wa, cs2, alpha_K_0, alpha_B_init=0):
+def solve_alpha_B(aktype, omega_m, w0, wa, cs2, cs2_a, alpha_K_0, alpha_B_init=0):
     bg = Bg(omega_m=omega_m, w0=w0, wa=wa)
 
     N       = 200 # Number of steps
@@ -106,11 +106,11 @@ def solve_alpha_B(aktype, omega_m, w0, wa, cs2, alpha_K_0, alpha_B_init=0):
     mu      = np.zeros(N+1)
 
     alpha_B[0] = alpha_B_init
-    alpha_K[0] = get_alpha_K(aktype, a[0], bg, alpha_B[0], cs2, alpha_K_0)
+    alpha_K[0] = get_alpha_K(aktype, a[0], bg, alpha_B[0], cs2, cs2_a, alpha_K_0)
     D_kin      = alpha_K[0] + 1.5*alpha_B[0]**2
     if alpha_B[0] == 0: mu[0] = 1
     else:
-        mu[0]  = 1 + alpha_B[0]**2/(2*cs2*D_kin) if D_kin != 0 else np.inf
+        mu[0]  = 1 + alpha_B[0]**2/(2*(cs2 + cs2_a*(1-a[0]))*D_kin) if D_kin != 0 else np.inf
     for i in range(N):
         if abs(alpha_B[i]) > 1e6:
             # JVR NOTE: for many cases, \alpha_B just blows up and in Python it becomes \inf.
@@ -119,15 +119,15 @@ def solve_alpha_B(aktype, omega_m, w0, wa, cs2, alpha_K_0, alpha_B_init=0):
             # And then I just fill the rest of the arrays with the last values and break out of the integration loop
             for j in range(i, N+1):
                 alpha_B[j] = alpha_B[i]
-                alpha_K[j] = get_alpha_K(aktype, a[j], bg, alpha_B[j], cs2, alpha_K_0)
+                alpha_K[j] = get_alpha_K(aktype, a[j], bg, alpha_B[j], cs2, cs2_a, alpha_K_0)
                 mu[j]      = mu[i]
             break
-        alpha_B[i+1] = alpha_B[i] + deriv(loga[i], alpha_B[i], bg, aktype, alpha_K_0, cs2)*dloga
-        alpha_K[i+1] = get_alpha_K(aktype, a[i+1], bg, alpha_B[i+1], cs2, alpha_K_0)
+        alpha_B[i+1] = alpha_B[i] + deriv(loga[i], alpha_B[i], bg, aktype, alpha_K_0, cs2, cs2_a)*dloga
+        alpha_K[i+1] = get_alpha_K(aktype, a[i+1], bg, alpha_B[i+1], cs2, cs2_a, alpha_K_0)
         D_kin      = alpha_K[i+1] + 1.5*alpha_B[i+1]**2
         if alpha_B[i+1] == 0: mu[i+1] = 1
         else:
-            mu[i+1]  = 1 + alpha_B[i+1]**2/(2*cs2*D_kin) if D_kin != 0 else np.inf
+            mu[i+1]  = 1 + alpha_B[i+1]**2/(2*(cs2 + cs2_a*(1 - a[i+1]))*D_kin) if D_kin != 0 else np.inf
 
     return loga*np.log10(np.e), alpha_B, alpha_K, mu
 
@@ -158,6 +158,7 @@ param_name_latex = {
     "w0"     : "$w_0$",
     "wa"     : "$w_a$",
     "cs2"    : "$c_s^2$",
+    "cs2_a"    : "$c_{s,a}^2$",
     "alpha_K_0": "$\\alpha_{K,0}$",
 }
 
