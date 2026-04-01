@@ -9,6 +9,12 @@ The solutions still depend on the specific form of $\alpha_K$ which is left unde
 - Cubic Galileon
 - Proportional to $\alpha_B$
 
+Furthermore, the code also considers the case in which the dark energy sound speed is dynamical. We assume a form similar to the equation of state, namely
+
+$
+    c_s^2 = c_{s,0}^2 + c_{s,a}^2(1 - a)
+$
+
 The algorithm that solves Equation 2.18 and calculates $\mu$ is given in `engine.py`.
 
 For each parametrization, I investigate two aspects:

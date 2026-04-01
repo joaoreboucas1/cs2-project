@@ -54,3 +54,15 @@
 57 | w0waq | cs2mg | Baseline | alpha_K kess, subluminal
 58 | w0wa | cs2mg | Baseline | alpha_K prop, subluminal
 59 | w0wa | cs2mg | Baseline | alpha_K cugal, subluminal
+60 | lcdm | cs2mg | Baseline | alpha_K omega_de, subluminal
+61 | lcdm | cs2mg | Baseline | alpha_K kess, subluminal
+62 | lcdm | cs2mg | Baseline | alpha_K prop, subluminal
+63 | lcdm | cs2mg | Baseline | alpha_K cugal, subluminal
+64 | w0wa | cs2mg | Baseline | alpha_K omega_de, superluminal
+65 | w0waq | cs2mg | Baseline | alpha_K kess, superluminal
+66 | w0wa | cs2mg | Baseline | alpha_K prop, superluminal
+67 | w0wa | cs2mg | Baseline | alpha_K cugal, superluminal
+68 | w0wa | cs2mg | Baseline | alpha_K omega_de, subluminal, dynamical cs2
+69 | w0waq | cs2mg | Baseline | alpha_K kess, subluminal, dynamical cs2
+70 | w0wa | cs2mg | Baseline | alpha_K prop, subluminal, dynamical cs2
+71 | w0wa | cs2mg | Baseline | alpha_K cugal, subluminal, dynamical cs2
