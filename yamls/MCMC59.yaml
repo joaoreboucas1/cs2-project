@@ -116,7 +116,11 @@ params:
     proposal: 0.0005
     latex: \Omega_\mathrm{c} h^2
   mnu:
-    value: 0
+    latex: \sum m_\nu
+    value: 0.06
+  nnu:
+    latex: N_\mathrm{eff}
+    value: 3.044
   tau:
     prior:
       min: 0.01
@@ -175,7 +179,7 @@ theory:
     use_renames: True
     extra_args:
       AccuracyBoost: 1.05
-      nnu: 3.044
+      num_massive_neutrinos: 1
       dark_energy_model: ppf
       use_cs2: True
       alpha_K_parametrization: 3

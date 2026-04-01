@@ -1,7 +1,7 @@
 timing: True
 debug: False
 stop_at_error: False
-output: ./projects/cs2-project/chains/MCMC58/MCMC58
+output: ./projects/cs2-project/chains/MCMC69/MCMC69
 
 likelihood:
   # CMB
@@ -19,13 +19,7 @@ likelihood:
     path: ./external_modules/data/sn_data   
 
 params:
-  alpha_K_0:
-    prior:
-      min: 0
-      max: 3
-    ref: 1
-    proposal: 0.1
-    latex: \alpha_{K,0}
+  alpha_K_0: 1
   cs2_0:
     prior:
       min: 0
@@ -35,16 +29,24 @@ params:
       max: 1
     proposal: 0.1
     latex: c_s^2
+  cs2_0pcs2_a:
+    prior:
+      min: 0
+      max: 1
+    proposal: 0.1
+    latex: c_{s,0}^2+c{s_a}^2
+  cs2_a:
+    value: 'lambda cs2_0, cs2_0pcs2_a: cs2_0pcs2_a - cs2_0'
   w0pwa:
     prior:
-      min: -3
+      min: -1
       max: 1
     ref: -0.999
     proposal: 0.2
     drop: true
   w:
     prior:
-      min: -3
+      min: -1
       max: -0.333
     ref: -0.999
     proposal: 0.2
@@ -182,7 +184,7 @@ theory:
       num_massive_neutrinos: 1
       dark_energy_model: ppf
       use_cs2: True
-      alpha_K_parametrization: 4
+      alpha_K_parametrization: 2
 
 sampler:
   mcmc:
