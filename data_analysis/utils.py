@@ -100,8 +100,8 @@ def get_mu_alphas_from_chain(chain, aktype):
     for sample in thin_samples:
         alpha_K_0 = sample[pnames.index("alpha_K_0")] if "alpha_K_0" in pnames else 1.0
         cs2 = sample[pnames.index("cs2_0")]
-        w0 = sample[pnames.index("w")]
-        wa = sample[pnames.index("w0pwa")] - w0
+        w0 = sample[pnames.index("w")] if "w" in pnames else -1.0
+        wa = sample[pnames.index("w0pwa")] - w0 if "w0pwa" in pnames else 0.0
         H0 = sample[pnames.index("H0*")]
         ombh2 = sample[pnames.index("omegabh2")]
         omch2 = sample[pnames.index("omegach2")]
