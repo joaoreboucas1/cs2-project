@@ -66,3 +66,7 @@
 69 | w0waq | cs2mg | Baseline | alpha_K kess, subluminal, dynamical cs2
 70 | w0wa | cs2mg | Baseline | alpha_K prop, subluminal, dynamical cs2
 71 | w0wa | cs2mg | Baseline | alpha_K cugal, subluminal, dynamical cs2
+72 | w0wa | cs2mg | Baseline | alpha_K omega_de, superluminal, dynamical cs2
+73 | w0waq | cs2mg | Baseline | alpha_K kess, superluminal, dynamical cs2
+74 | w0wa | cs2mg | Baseline | alpha_K prop, superluminal, dynamical cs2
+75 | w0wa | cs2mg | Baseline | alpha_K cugal, superluminal, dynamical cs2

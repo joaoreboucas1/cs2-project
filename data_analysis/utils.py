@@ -66,14 +66,14 @@ dataset_descriptions = {
 
 import camb
 
-def solve_alpha_B_ft(aktype, alpha_K_0, cs2, ombh2, omch2, w0, wa, H0):
+def solve_alpha_B_ft(aktype, alpha_K_0, cs2, cs2_a, ombh2, omch2, w0, wa, H0):
     ombh2 = 0.0122
     h = 0.7
     cosmo = camb.set_params(
         H0=H0, ombh2=ombh2, omch2=omch2, nnu=3.044, mnu=0.06,
         As=2.1e-9, ns=0.96, tau=0.06, WantTransfer=True, w=w0, wa=wa,
         dark_energy_model="ppf",
-        alpha_K_parametrization=aktype, cs2_0=cs2, use_cs2=True, alpha_K_0=alpha_K_0
+        alpha_K_parametrization=aktype, cs2_0=cs2, cs2_a=cs2_a, use_cs2=True, alpha_K_0=alpha_K_0
     )
     results = camb.get_background(cosmo)
     log_a = results.Params.log_a
@@ -100,13 +100,14 @@ def get_mu_alphas_from_chain(chain, aktype):
     for sample in thin_samples:
         alpha_K_0 = sample[pnames.index("alpha_K_0")] if "alpha_K_0" in pnames else 1.0
         cs2 = sample[pnames.index("cs2_0")]
+        cs2_a = sample[pnames.index("cs2_a")] if "cs2_a" in pnames else 0.0
         w0 = sample[pnames.index("w")] if "w" in pnames else -1.0
         wa = sample[pnames.index("w0pwa")] - w0 if "w0pwa" in pnames else 0.0
         H0 = sample[pnames.index("H0*")]
         ombh2 = sample[pnames.index("omegabh2")]
         omch2 = sample[pnames.index("omegach2")]
 
-        log_a, alpha_B, alpha_K, mu = solve_alpha_B_ft(aktype=aktype, alpha_K_0=alpha_K_0, cs2=cs2, ombh2=ombh2, omch2=omch2, w0=w0, wa=wa, H0=H0)
+        log_a, alpha_B, alpha_K, mu = solve_alpha_B_ft(aktype=aktype, alpha_K_0=alpha_K_0, cs2=cs2, cs2_a=cs2_a, ombh2=ombh2, omch2=omch2, w0=w0, wa=wa, H0=H0)
         
         alpha_Bs.append(alpha_B)
         alpha_Ks.append(alpha_K)
