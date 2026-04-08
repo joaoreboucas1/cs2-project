@@ -11,7 +11,7 @@ for i in chain_indices:
     
     with open(checkpoint_file_name, "r") as f: contents = f.read().splitlines()
     
-    last_R_minus_one = contents[3].split()[-1]
+    last_R_minus_one = float(contents[3].split()[-1])
     
     print(f"MCMC{i} => |R-1| = {last_R_minus_one:.5f} (last update: {time.ctime(os.path.getmtime(checkpoint_file_name))})")
     print("-------")
