@@ -23,6 +23,12 @@ def load_chain(index, burn_in=0.2, smooth_2D=None):
         omegam = (chain["omegach2"]+chain["omegabh2"]+(0.06/93.15))/(chain["H0"]/100)**2
         chain.addDerived(omegam, name="omegam", label="\\Omega_m")
     
+    if chain.paramNames.hasParam("alpha_K_0"):
+        chain.paramNames.parWithName("alpha_K_0").label = r"\lambda_\mathrm{MG}"
+    
+    if chain.paramNames.hasParam("cs2_a"):
+        chain.paramNames.parWithName("cs2_a").label = r"c_{s,a}^2"
+
     chain.addDerived(chain["sigma8"]*np.sqrt(chain["omegam"]/0.3), name="S8", label="S_8")
     
     return chain
