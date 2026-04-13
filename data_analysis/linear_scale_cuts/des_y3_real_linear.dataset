@@ -1,4 +1,4 @@
-data_file = test.datavector
+data_file = des_y3_unblinded_final.txt
 cov_file = des_y3_cov_unblinded_final.txt
 mask_file = linear.mask
 nz_lens_file = des_y3_lens.nz

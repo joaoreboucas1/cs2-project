@@ -70,3 +70,10 @@
 73 | w0waq | cs2mg | Baseline | alpha_K kess, superluminal, dynamical cs2
 74 | w0wa | cs2mg | Baseline | alpha_K prop, superluminal, dynamical cs2
 75 | w0wa | cs2mg | Baseline | alpha_K cugal, superluminal, dynamical cs2
+76 | w0wa | cs2f | Baseline+CMBL+DES-Y3-CS
+77 | w0wa | cs21 | Baseline+CMBL+DES-Y3-CS
+78 | lcdm | cs21 | Baseline+CMBL+DES-Y3-CS
+79 | w0wa | cs2mg | Baseline+CMBL+DES-Y3-CS | alpha_K omega_de, subluminal
+80 | w0waq | cs2mg | Baseline+CMBL+DES-Y3-CS | alpha_K kess, subluminal
+81 | w0wa | cs2mg | Baseline+CMBL+DES-Y3-CS | alpha_K prop, subluminal
+82 | w0wa | cs2mg | Baseline+CMBL+DES-Y3-CS | alpha_K cugal, subluminal
