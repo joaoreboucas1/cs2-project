@@ -1,0 +1,264 @@
+Number of unmasked points in fiducial mask = 533
+chi2 between linear and halofit in fiducial mask = 91.5755998921862
+Removing data point 164 with chi2 reduction of 3.581761928974103
+New chi2 = 87.9938379632121
+Removing data point 183 with chi2 reduction of 3.3610631018180896
+New chi2 = 84.63277486139401
+Removing data point 144 with chi2 reduction of 3.3212640864912544
+New chi2 = 81.31151077490276
+Removing data point 104 with chi2 reduction of 2.889882061321174
+New chi2 = 78.42162871358158
+Removing data point 124 with chi2 reduction of 2.0218012640844734
+New chi2 = 76.39982744949711
+Removing data point 184 with chi2 reduction of 1.7998253273310212
+New chi2 = 74.60000212216609
+Removing data point 165 with chi2 reduction of 1.744474352697921
+New chi2 = 72.85552776946817
+Removing data point 145 with chi2 reduction of 1.6966612417949563
+New chi2 = 71.15886652767321
+Removing data point 105 with chi2 reduction of 1.5613280266537402
+New chi2 = 69.59753850101947
+Removing data point 63 with chi2 reduction of 1.4222589802414234
+New chi2 = 68.17527952077805
+Removing data point 44 with chi2 reduction of 1.3573261717704668
+New chi2 = 66.81795334900758
+Removing data point 125 with chi2 reduction of 1.0993561846041473
+New chi2 = 65.71859716440343
+Removing data point 394 with chi2 reduction of 1.1540972137660077
+New chi2 = 64.56449995063743
+Removing data point 84 with chi2 reduction of 1.1187273582982442
+New chi2 = 63.44577259233918
+Removing data point 185 with chi2 reduction of 1.0027518522063943
+New chi2 = 62.44302074013279
+Removing data point 64 with chi2 reduction of 1.0129334775363787
+New chi2 = 61.43008726259641
+Removing data point 24 with chi2 reduction of 1.025830193955045
+New chi2 = 60.404257068641364
+Removing data point 273 with chi2 reduction of 1.0205015851932018
+New chi2 = 59.38375548344816
+Removing data point 45 with chi2 reduction of 0.8390036947273174
+New chi2 = 58.544751788720845
+Removing data point 210 with chi2 reduction of 0.7673566160122505
+New chi2 = 57.777395172708594
+Removing data point 375 with chi2 reduction of 0.7566046214047191
+New chi2 = 57.020790551303875
+Removing data point 355 with chi2 reduction of 1.3988984987929314
+New chi2 = 55.621892052510944
+Removing data point 166 with chi2 reduction of 1.006377642103736
+New chi2 = 54.61551441040721
+Removing data point 146 with chi2 reduction of 0.9905065053183293
+New chi2 = 53.62500790508888
+Removing data point 315 with chi2 reduction of 1.006591932325307
+New chi2 = 52.61841597276357
+Removing data point 106 with chi2 reduction of 1.0331426669363424
+New chi2 = 51.58527330582723
+Removing data point 254 with chi2 reduction of 0.8853011329902429
+New chi2 = 50.699972172836986
+Removing data point 395 with chi2 reduction of 0.8212541637449178
+New chi2 = 49.87871800909207
+Removing data point 335 with chi2 reduction of 1.0133431540004025
+New chi2 = 48.865374855091666
+Removing data point 85 with chi2 reduction of 0.8388499804901741
+New chi2 = 48.02652487460149
+Removing data point 294 with chi2 reduction of 0.861092364086339
+New chi2 = 47.16543251051515
+Removing data point 126 with chi2 reduction of 0.8963394826424746
+New chi2 = 46.26909302787268
+Removing data point 25 with chi2 reduction of 0.8954620098590382
+New chi2 = 45.37363101801364
+Removing data point 65 with chi2 reduction of 0.9123657885089358
+New chi2 = 44.461265229504704
+Removing data point 234 with chi2 reduction of 0.8980997514649758
+New chi2 = 43.56316547803973
+Removing data point 274 with chi2 reduction of 1.0368713180242608
+New chi2 = 42.52629416001547
+Removing data point 211 with chi2 reduction of 0.8298292963184863
+New chi2 = 41.69646486369698
+Removing data point 1 with chi2 reduction of 0.8027571886928158
+New chi2 = 40.893707675004165
+Removing data point 2 with chi2 reduction of 0.787780596829414
+New chi2 = 40.10592707817475
+Removing data point 0 with chi2 reduction of 0.7958419532712284
+New chi2 = 39.31008512490352
+Removing data point 46 with chi2 reduction of 0.7729035378751661
+New chi2 = 38.53718158702836
+Removing data point 212 with chi2 reduction of 0.7799149632881566
+New chi2 = 37.7572666237402
+Removing data point 3 with chi2 reduction of 0.7562195656683031
+New chi2 = 37.0010470580719
+Removing data point 255 with chi2 reduction of 0.7203367628257382
+New chi2 = 36.28071029524616
+Removing data point 376 with chi2 reduction of 0.7270716986504766
+New chi2 = 35.55363859659568
+Removing data point 356 with chi2 reduction of 1.1414963746000595
+New chi2 = 34.41214222199562
+Removing data point 316 with chi2 reduction of 0.8577795458714661
+New chi2 = 33.55436267612416
+Removing data point 26 with chi2 reduction of 0.6924180463013982
+New chi2 = 32.86194462982276
+Removing data point 295 with chi2 reduction of 0.7052887068963258
+New chi2 = 32.15665592292643
+Removing data point 235 with chi2 reduction of 0.7412900578120052
+New chi2 = 31.415365865114428
+Removing data point 275 with chi2 reduction of 0.782956418443284
+New chi2 = 30.632409446671144
+Removing data point 66 with chi2 reduction of 0.7515947540629178
+New chi2 = 29.880814692608226
+Removing data point 213 with chi2 reduction of 0.7297579118243789
+New chi2 = 29.151056780783847
+Removing data point 4 with chi2 reduction of 0.7308801956400011
+New chi2 = 28.420176585143846
+Removing data point 186 with chi2 reduction of 0.6945887607825796
+New chi2 = 27.725587824361266
+Removing data point 336 with chi2 reduction of 0.700923574384543
+New chi2 = 27.024664249976723
+Removing data point 396 with chi2 reduction of 0.7361494318567381
+New chi2 = 26.288514818119985
+Removing data point 107 with chi2 reduction of 0.7009645755607039
+New chi2 = 25.58755024255928
+Removing data point 86 with chi2 reduction of 0.7224526608818813
+New chi2 = 24.8650975816774
+Removing data point 167 with chi2 reduction of 0.6467075743367872
+New chi2 = 24.218390007340613
+Removing data point 214 with chi2 reduction of 0.6071796144495707
+New chi2 = 23.611210392891042
+Removing data point 127 with chi2 reduction of 0.6082714276075336
+New chi2 = 23.00293896528351
+Removing data point 147 with chi2 reduction of 0.6028227195835818
+New chi2 = 22.400116245699927
+Removing data point 5 with chi2 reduction of 0.5980453152073153
+New chi2 = 21.80207093049261
+Removing data point 47 with chi2 reduction of 0.6089152159218472
+New chi2 = 21.193155714570764
+Removing data point 377 with chi2 reduction of 0.568127161368686
+New chi2 = 20.62502855320208
+Removing data point 357 with chi2 reduction of 0.7445115140222427
+New chi2 = 19.880517039179836
+Removing data point 317 with chi2 reduction of 0.6184784511267409
+New chi2 = 19.262038588053095
+Removing data point 256 with chi2 reduction of 0.590951402056973
+New chi2 = 18.67108718599612
+Removing data point 27 with chi2 reduction of 0.540606100860451
+New chi2 = 18.13048108513567
+Removing data point 236 with chi2 reduction of 0.5318353226045858
+New chi2 = 17.598645762531085
+Removing data point 276 with chi2 reduction of 0.6132933272112773
+New chi2 = 16.985352435319808
+Removing data point 296 with chi2 reduction of 0.5932536612607464
+New chi2 = 16.39209877405906
+Removing data point 67 with chi2 reduction of 0.5465950500850134
+New chi2 = 15.845503723974048
+Removing data point 215 with chi2 reduction of 0.5163091560647626
+New chi2 = 15.329194567909285
+Removing data point 6 with chi2 reduction of 0.5045292330011737
+New chi2 = 14.824665334908111
+Removing data point 337 with chi2 reduction of 0.4984845754430385
+New chi2 = 14.326180759465073
+Removing data point 397 with chi2 reduction of 0.4476424525509497
+New chi2 = 13.878538306914123
+Removing data point 87 with chi2 reduction of 0.43800736488533687
+New chi2 = 13.440530942028786
+Removing data point 108 with chi2 reduction of 0.37646700810320866
+New chi2 = 13.064063933925578
+Removing data point 378 with chi2 reduction of 0.35706230931902283
+New chi2 = 12.707001624606555
+Removing data point 358 with chi2 reduction of 0.4260657408226258
+New chi2 = 12.280935883783929
+Removing data point 318 with chi2 reduction of 0.3962877910552507
+New chi2 = 11.884648092728678
+Removing data point 257 with chi2 reduction of 0.3617010406564827
+New chi2 = 11.522947052072196
+Removing data point 48 with chi2 reduction of 0.39388151985779096
+New chi2 = 11.129065532214405
+Removing data point 216 with chi2 reduction of 0.371595760145464
+New chi2 = 10.75746977206894
+Removing data point 237 with chi2 reduction of 0.37460212983240027
+New chi2 = 10.38286764223654
+Removing data point 277 with chi2 reduction of 0.4275152785818097
+New chi2 = 9.95535236365473
+Removing data point 297 with chi2 reduction of 0.38959664400262106
+New chi2 = 9.56575571965211
+Removing data point 28 with chi2 reduction of 0.38396932793362915
+New chi2 = 9.18178639171848
+Removing data point 7 with chi2 reduction of 0.37876910566590993
+New chi2 = 8.80301728605257
+Removing data point 187 with chi2 reduction of 0.3345584207225727
+New chi2 = 8.468458865329998
+Removing data point 68 with chi2 reduction of 0.33365807676768533
+New chi2 = 8.134800788562313
+Removing data point 128 with chi2 reduction of 0.3269660104716845
+New chi2 = 7.807834778090628
+Removing data point 338 with chi2 reduction of 0.3380613431765003
+New chi2 = 7.469773434914128
+Removing data point 168 with chi2 reduction of 0.27628943771313796
+New chi2 = 7.19348399720099
+Removing data point 398 with chi2 reduction of 0.26754048393240915
+New chi2 = 6.925943513268581
+Removing data point 217 with chi2 reduction of 0.2633177539698348
+New chi2 = 6.662625759298746
+Removing data point 148 with chi2 reduction of 0.2541527483442101
+New chi2 = 6.408473010954536
+Removing data point 258 with chi2 reduction of 0.2485270433826683
+New chi2 = 6.1599459675718675
+Removing data point 238 with chi2 reduction of 0.24290778452185702
+New chi2 = 5.9170381830500105
+Removing data point 278 with chi2 reduction of 0.29224717437060477
+New chi2 = 5.624791008679406
+Removing data point 8 with chi2 reduction of 0.2492983341857986
+New chi2 = 5.375492674493607
+Removing data point 88 with chi2 reduction of 0.24539225204755422
+New chi2 = 5.130100422446053
+Removing data point 298 with chi2 reduction of 0.2402586126666444
+New chi2 = 4.8898418097794085
+Removing data point 49 with chi2 reduction of 0.2351093212020059
+New chi2 = 4.654732488577403
+Removing data point 379 with chi2 reduction of 0.22709466377155874
+New chi2 = 4.427637824805844
+Removing data point 359 with chi2 reduction of 0.23681559144544728
+New chi2 = 4.190822233360397
+Removing data point 319 with chi2 reduction of 0.2625603055864767
+New chi2 = 3.92826192777392
+Removing data point 29 with chi2 reduction of 0.21964772116753695
+New chi2 = 3.708614206606383
+Removing data point 339 with chi2 reduction of 0.19870021385207037
+New chi2 = 3.5099139927543126
+Removing data point 109 with chi2 reduction of 0.18588225157560645
+New chi2 = 3.324031741178706
+Removing data point 218 with chi2 reduction of 0.18449445978245294
+New chi2 = 3.139537281396253
+Removing data point 69 with chi2 reduction of 0.18282375229932812
+New chi2 = 2.956713529096925
+Removing data point 259 with chi2 reduction of 0.17910134257553256
+New chi2 = 2.7776121865213925
+Removing data point 239 with chi2 reduction of 0.17150555965605774
+New chi2 = 2.606106626865335
+Removing data point 279 with chi2 reduction of 0.1855874609401882
+New chi2 = 2.4205191659251466
+Removing data point 9 with chi2 reduction of 0.15802213442406332
+New chi2 = 2.2624970315010833
+Removing data point 299 with chi2 reduction of 0.14689550394750928
+New chi2 = 2.115601527553574
+Removing data point 399 with chi2 reduction of 0.13704275990606907
+New chi2 = 1.978558767647505
+Removing data point 129 with chi2 reduction of 0.12866527328016875
+New chi2 = 1.8498934943673362
+Removing data point 219 with chi2 reduction of 0.12482629410705592
+New chi2 = 1.7250672002602803
+Removing data point 89 with chi2 reduction of 0.11610074217744715
+New chi2 = 1.6089664580828331
+Removing data point 50 with chi2 reduction of 0.11244632370295826
+New chi2 = 1.4965201343798749
+Removing data point 30 with chi2 reduction of 0.114372612898332
+New chi2 = 1.3821475214815429
+Removing data point 188 with chi2 reduction of 0.10412470425565568
+New chi2 = 1.2780228172258872
+Removing data point 70 with chi2 reduction of 0.0859193946595489
+New chi2 = 1.1921034225663383
+Removing data point 10 with chi2 reduction of 0.0848242680886726
+New chi2 = 1.1072791544776657
+Removing data point 149 with chi2 reduction of 0.03774019794412098
+New chi2 = 1.0695389565335447
+Removing data point 31 with chi2 reduction of 0.0371728383767822
+New chi2 = 1.0323661181567625
+Removing data point 51 with chi2 reduction of 0.03668729607596133
+New chi2 = 0.9956788220808012
