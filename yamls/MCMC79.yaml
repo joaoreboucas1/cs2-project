@@ -17,7 +17,7 @@ likelihood:
     path: ./external_modules/data/sn_data
   des_y3.des_cosmic_shear:
     path: ./external_modules/data/des_y3
-    data_file: des_y3_real.dataset
+    data_file: des_y3_real_linear.dataset
     accuracyboost: 1.0
     integration_accuracy: 1
     kmax_boltzmann: 5.0
