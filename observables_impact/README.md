@@ -1,0 +1,3 @@
+# Studying the impact of $c_s^2$ in P(k) and CMB
+
+The goal of this part of the project is to assess the impact of non-standard dark energy sound speed in the perturbations, specifically in the matter power spectrum and the CMB anisotropies. The products are plots showing the fractional difference between the extended case and the fiducial case (GR $c_s^2 = 1$) for dynamical dark energy model akin to DESI constraints. The notebooks generate the results that are stored in `plots/`.

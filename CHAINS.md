@@ -77,3 +77,5 @@
 80 | w0waq | cs2mg | Baseline+CMBL+DES-Y3-CS | alpha_K kess, subluminal
 81 | w0wa | cs2mg | Baseline+CMBL+DES-Y3-CS | alpha_K prop, subluminal
 82 | w0wa | cs2mg | Baseline+CMBL+DES-Y3-CS | alpha_K cugal, subluminal
+83 | w0waq | cs2f | Baseline
+84 | w0waq | cs2f | Baseline+CMBL+DES-Y3-CS

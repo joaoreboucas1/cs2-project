@@ -88,10 +88,9 @@ def solve_alpha_B_ft(aktype, alpha_K_0, cs2, cs2_a, ombh2, omch2, w0, wa, H0):
     mu = results.Params.mu
     return log_a*np.log10(np.e), alpha_B, alpha_K, mu
 
-def get_mu_alphas_from_chain(chain, aktype):
+def get_mu_alphas_from_chain(chain, aktype, thin_factor):
     np.random.shuffle(chain.samples)
     
-    thin_factor = 100
     thin_samples = chain.samples[::thin_factor]
     
     print(f"Number of samples = {len(chain.samples)}")
