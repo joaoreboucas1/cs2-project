@@ -79,3 +79,11 @@
 82 | w0wa | cs2mg | Baseline+CMBL+DES-Y3-CS | alpha_K cugal, subluminal
 83 | w0waq | cs2f | Baseline
 84 | w0waq | cs2f | Baseline+CMBL+DES-Y3-CS
+85 | w0wa | cs21 | Baseline | alpha_K omega_de, subluminal
+86 | w0waq | cs21 | Baseline | alpha_K kess, subluminal
+87 | w0wa | cs21 | Baseline | alpha_K prop, subluminal
+88 | w0wa | cs21 | Baseline | alpha_K cugal, subluminal
+89 | w0wa | cs21 | Baseline+CMBL+DES-Y3-CS | alpha_K omega_de, subluminal
+90 | w0waq | cs21 | Baseline+CMBL+DES-Y3-CS | alpha_K kess, subluminal
+91 | w0wa | cs21 | Baseline+CMBL+DES-Y3-CS | alpha_K prop, subluminal
+92 | w0wa | cs21 | Baseline+CMBL+DES-Y3-CS | alpha_K cugal, subluminal
