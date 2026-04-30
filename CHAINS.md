@@ -88,7 +88,7 @@
 91 | w0wa | cs21 | Baseline+CMBL+DES-Y3-CS | alpha_K prop, subluminal
 92 | w0wa | cs21 | Baseline+CMBL+DES-Y3-CS | alpha_K cugal, subluminal
 93 | w0wa | cs2f | Baseline+CMBL+DES-Y3-CS (linear)
-94 | w0wa | cs2mg | Baseline | alpha_K omega_de, subluminal, takahashi
-95 | w0waq | cs2mg | Baseline | alpha_K kess, subluminal, takahashi
-96 | w0wa | cs2mg | Baseline | alpha_K prop, subluminal, takahashi
-97 | w0wa | cs2mg | Baseline | alpha_K cugal, subluminal, takahashi
+94 | w0wa | cs2mg | Baseline | alpha_K omega_de, subluminal, linear lensing
+95 | w0waq | cs2mg | Baseline | alpha_K kess, subluminal, linear lensing
+96 | w0wa | cs2mg | Baseline | alpha_K prop, subluminal, linear lensing
+97 | w0wa | cs2mg | Baseline | alpha_K cugal, subluminal, linear lensing

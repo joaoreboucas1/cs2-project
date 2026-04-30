@@ -9,7 +9,7 @@ def get_observables(case, H0, ombh2, omch2, As, ns, tau, w0, wa, dark_energy_typ
         H0=H0, ombh2=ombh2, omch2=omch2, As=As, ns=ns, tau=tau,
         num_nu_massless=3.044, omnuh2=0, WantTransfer=True, w=w0, wa=wa,
         dark_energy_model="fluid" if dark_energy_type == "wcdm" else "ppf",
-        use_cs2=case["use_cs2"], alpha_K_parametrization=1, cs2_0=case["cs2_0"], alpha_K_0=case["alpha_K_0"]
+        use_cs2=case["use_cs2"], alpha_K_parametrization=alpha_k_parametrization, cs2_0=case["cs2_0"], alpha_K_0=case["alpha_K_0"]
     )
     cosmo.set_for_lmax(2000, lens_potential_accuracy=1)
     cosmo.set_matter_power(redshifts=redshifts, kmax=20, silent=True, nonlinear=None)

@@ -68,10 +68,8 @@ def get_alpha_K(aktype, a, bg, alpha_B, cs2, cs2_a, alpha_K_0):
             return alpha_K_0*3*alpha_B
         case alphaKtype.CUGAL_MOCHI:
             # NOTE: E^2 = (H/H0)^2 = rhotot/rho_cr_0
-            rhode  = rho_de(a, bg)
-            rhotot = rho_m(a, bg) + rho_gamma(a, bg) + rhode
-            omega_de = rhode/rhotot
-            return alpha_K_0*6*omega_de/rhotot**2
+            rhotot = rho_m(a, bg) + rho_gamma(a, bg) + rho_de(a, bg)
+            return alpha_K_0*6*bg.omega_de_0/rhotot**2
         case alphaKtype.DKIN_JOAO:
             # D_kin = lambda*d\ln(H)/d\ln(a) = lambda*(-3*(1 + w_tot)/2)
             rhode  = rho_de(a, bg)
