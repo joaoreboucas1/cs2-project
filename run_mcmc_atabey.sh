@@ -32,6 +32,6 @@ export MKL_NUM_THREADS=${SLURM_CPUS_PER_TASK}
 export OPENBLAS_NUM_THREADS=${SLURM_CPUS_PER_TASK}
 export NUMEXPR_NUM_THREADS=${SLURM_CPUS_PER_TASK}
 
-mpirun -n ${SLURM_NTASKS_PER_NODE} --mca btl tcp,self --bind-to core --map-by socket:PE=${OMP_NUM_THREADS} cobaya-run ${YAML} -r
+srun --mpi=pmix --cpu_bind=cores --distribution=block -n ${SLURM_NTASKS} cobaya-run ${YAML} -r
 
 echo "Job ended at `date`"
