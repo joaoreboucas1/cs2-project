@@ -9,7 +9,7 @@ if __name__ == "__main__":
         case 1:
             print("Downloading all chains...")
             proc = subprocess.run([
-                "scp", "-r", "-P", "13900", f"joaoreboucas@che.cbpf.br:{PATH}", "./chains/"
+                "scp", "-r", "-P", "13900", f"joaoreboucas@che.cbpf.br:{PATH}", "."
             ])
             if proc.returncode != 0: print("ERROR downloading all chains")
         case 2:
