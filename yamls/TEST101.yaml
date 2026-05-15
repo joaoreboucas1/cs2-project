@@ -1,7 +1,7 @@
 timing: true
 debug: false
 stop_at_error: false
-output: ./projects/cs2-project/chains/MCMC101/MCMC101
+output: ./projects/cs2-project/chains/TEST101/TEST101
 likelihood:
   planck_2020_hillipop.TTTEEE:
     data_folder: planck/hillipop
