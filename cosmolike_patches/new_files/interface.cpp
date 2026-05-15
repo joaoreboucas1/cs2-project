@@ -104,7 +104,7 @@ void set_cosmology(
     std::vector<double> io_chi,
     std::vector<double> a_mg,
     std::vector<double> mu_mg,
-    std::vector<double> sigma_mg,
+    std::vector<double> sigma_mg
   )
 {
   spdlog::debug("\x1b[90m{}\x1b[0m: Begins", "set_cosmology");
