@@ -1712,7 +1712,7 @@ void set_mg_functions(vector a_mg, vector mu_mg, vector sigma_mg)
   if (debug_fail)
   {
     spdlog::critical("{}: incompatible input w/ z.size = {}, mu.size = {} and sigma.size = {}",
-      "set_mg_functions", mg_z.n_elem, mg_mu.n_elem, mg_sigma);
+      "set_mg_functions", a_mg.n_elem, mu_mg.n_elem, sigma_mg.n_elem);
     exit(1);
   }
   if(a_mg.n_elem < 5)

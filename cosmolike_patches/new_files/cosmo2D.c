@@ -945,8 +945,8 @@ double int_for_C_ss_tomo_limber(double a, void* params)
   const double hoverh0 = hoverh0v2(a, chidchi.dchida);
   const double fK = f_K(chidchi.chi);
   const double k = ell/fK;
-  const double mu = 0.0;
-  const double sigma = 0.0;
+  double mu = 0.0;
+  double sigma = 0.0;
   get_mu_and_sigma(a, &mu, &sigma);
   
   const double WK1 = W_kappa(a, fK, n1);
