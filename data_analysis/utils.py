@@ -12,9 +12,10 @@ colors = ["#1b9e77", "#d95f02", "#7570b3", "#e7298a", "#66a61e"]
 
 # ----- GetDist helper functions -----
 
-def load_chain(index, burn_in=0.2, smooth_2D=None):
-    if smooth_2D is not None: settings = {"smooth_scale_2D": smooth_2D}
-    else: settings = None
+def load_chain(index, burn_in=0.2, smooth_2D=None, smooth_1D=None):
+    settings = {}
+    if smooth_2D is not None: settings["smooth_scale_2D"] = smooth_2D
+    if smooth_1D is not None: settings["smooth_scale_1D"] = smooth_1D
 
     chain = getdist.loadMCSamples(f"../chains/MCMC{index}/MCMC{index}", settings=settings)
     chain.removeBurn(burn_in)
