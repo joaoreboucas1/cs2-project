@@ -6,7 +6,7 @@
 - `des_y3/interface/interface.cpp`:
   1. L187, `set_cosmology()` function: add mu and sigma as parameters, and then call `set_mg_functions(io_z_2D, mu, sigma)`
 - `external_modules/code/cosmolike/generic_interface.cpp`:
-  1. Add another function `set_mg_functions(vector io_z, vector io_mu, vector io_sigma)` just like `set_growth(vector io_z, vector io_G)` (I did up until this step)
+  1. Add another function `set_mg_functions(vector io_z, vector io_mu, vector io_sigma)` just like `set_growth(vector io_z, vector io_G)`
 - `external_modules/code/cosmolike/structs.h`:
   1. Add two fields to struct `cosmopara`, `size_t MGfuncs_nz` and `double **MGfuncs` such that `MGFuncs[0, :] = z_MG`, `MGFuncs[1, :] = mu` and `MGFuncs[2, :] = sigma`
 - `external_modules/code/cosmolike/cosmo2D.c`:

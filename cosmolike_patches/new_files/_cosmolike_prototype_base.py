@@ -228,7 +228,7 @@ class _cosmolike_prototype_base(DataSetLikelihood):
       lnPNL += np.log((h**3))      
 
     else:
-      raise LoggedError(self.log, "non_linear_emul = %d is an invalid option", non_linear_emul)
+      raise LoggedError(self.log, "non_linear_emul = %d is an invalid option", self.non_linear_emul)
 
     G_growth = np.sqrt(PKL.P(self.z_interp_2D,0.0005)/PKL.P(0,0.0005))
     G_growth = G_growth*(1 + self.z_interp_2D)    # do not merge these lines PI
@@ -239,9 +239,9 @@ class _cosmolike_prototype_base(DataSetLikelihood):
     results = getattr(theory, "camb_results", None) or getattr(theory, "results", None)
     assert results is not None, "ERROR extracting the CAMB results from within Cosmolike likelihood"
     log_a   = results.Params.log_a
-    alpha_B = results.Params.alpha_B
-    alpha_K = results.Params.alpha_K
-    z_mg = np.exp(-log_a) - 1
+    mu_mg = results.Params.mu
+    sigma_mg = results.Params.mu
+    a_mg = np.exp(log_a)
     # JVR MOD end
 
     ci.set_cosmology(
@@ -254,7 +254,7 @@ class _cosmolike_prototype_base(DataSetLikelihood):
       G=G_growth,
       z_1D=self.z_interp_1D,
       chi=self.provider.get_comoving_radial_distance(self.z_interp_1D)*h # convert to Mpc/h
-      z_mg=z_mg,        # JVR MOD: passing z, mu and sigma functions to Cosmolike
+      a_mg=a_mg,        # JVR MOD: passing z, mu and sigma functions to Cosmolike
       mu_mg=mu_mg,
       sigma_mg=sigma_mg
     )

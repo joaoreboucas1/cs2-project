@@ -945,6 +945,9 @@ double int_for_C_ss_tomo_limber(double a, void* params)
   const double hoverh0 = hoverh0v2(a, chidchi.dchida);
   const double fK = f_K(chidchi.chi);
   const double k = ell/fK;
+  const double mu = 0.0;
+  const double sigma = 0.0;
+  get_mu_and_sigma(a, &mu, &sigma);
   
   const double WK1 = W_kappa(a, fK, n1);
   const double WK2 = W_kappa(a, fK, n2);
@@ -1005,10 +1008,10 @@ double int_for_C_ss_tomo_limber(double a, void* params)
         const double mixEE = (lnk<lim[0] || lnk>lim[1]) ? 0.0 : 
           g4*interpol1d(FPTIA.tab[8], FPTIA.N, lim[0], lim[1], lim[2], lnk);
         
-        ans = WK1*WK2*PK 
-              - WS1*WK2*(C11*PK + C11*bta1*(ta_dE1+ta_dE2) - 5*C21*(mixA+mixB))
-              - WS2*WK1*(C12*PK + C12*bta2*(ta_dE1+ta_dE2) - 5*C22*(mixA+mixB))
-              + WS1*WS2*(C11*C12*PK 
+        ans = sigma*sigma*WK1*WK2*PK 
+              - sigma*mu*WS1*WK2*(C11*PK + C11*bta1*(ta_dE1+ta_dE2) - 5*C21*(mixA+mixB))
+              - sigma*mu*WS2*WK1*(C12*PK + C12*bta2*(ta_dE1+ta_dE2) - 5*C22*(mixA+mixB))
+              + mu*mu*WS1*WS2*(C11*C12*PK 
                          + C11*C12*(bta1*bta2*ta + (bta1+bta2)*(ta_dE1+ta_dE2))
                          - 5.*(C11*C22 + C12*C21)*(mixA+mixB)
                          - 5.*(C11*bta1*C22+C12*bta2*C21)*mixEE
@@ -1047,10 +1050,10 @@ double int_for_C_ss_tomo_limber(double a, void* params)
         IA_A1_Z1Z2(a, growfac_a, n1, n2, IA_A1);
         const double C11 = IA_A1[0];
         const double C12 = IA_A1[1];
-        ans =   WK1*WK2*PK 
-              - WS1*WK2*C11*PK 
-              - WS2*WK1*C12*PK
-              + WS1*WS2*C11*C12*PK;
+        ans =   sigma*sigma*WK1*WK2*PK 
+              - sigma*mu*WS1*WK2*C11*PK 
+              - sigma*mu*WS2*WK1*C12*PK
+              + mu*mu*WS1*WS2*C11*C12*PK;
       }
       else
       {

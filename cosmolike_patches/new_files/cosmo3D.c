@@ -105,6 +105,30 @@ double hoverh0v2(const double a, const double dchida)
   return 1.0/((a*a)*dchida);
 }
 
+void get_mu_and_sigma(const double a_in, double *mu_out, double *sigma_out)
+{
+  for (size_t i = 0; i < cosmology.MGFuncs_nz - 1; ++i) {
+    const double a_low     = cosmology.MGFuncs[0][i];
+    const double mu_low    = cosmology.MGFuncs[1][i];
+    const double sigma_low = cosmology.MGFuncs[2][i];
+    if (a_in > a_low) {
+      const double a_hi     = cosmology.MGFuncs[0][i+1];
+      const double mu_hi    = cosmology.MGFuncs[1][i+1];
+      const double sigma_hi = cosmology.MGFuncs[2][i+1];
+      const double t = (a_in - a_low)/(a_hi - a_low);
+      if (t > 1.0) t = 1.0;
+      *mu_out    = mu_low + (mu_hi - mu_low)/(a_hi - a_low)*t;
+      *sigma_out = sigma_low + (sigma_hi - sigma_low)/(a_hi - a_low)*t;
+      return;
+    }
+  }
+  
+  // In case you got out of the loop and did not return, this is a bug!
+  fprintf(stderr, "ERROR: could not interpolate mu and sigma at a = %f\n", a_in);
+  fprintf(stderr, "This is likely a bug in my implementation\n");
+  exit(1);
+}
+
 double a_chi(const double io_chi)
 {
   // convert from (Mpc/h)/(c/H0=100)^3 (dimensioneless) to (Mpc/h)

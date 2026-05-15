@@ -1698,12 +1698,12 @@ void set_growth(vector io_z, vector io_G)
 // ---------------------------------------------------------------------------
 
 // MG functions \mu and \Sigma
-void set_mg_functions(vector z_mg, vector mu_mg, vector sigma_mg)
+void set_mg_functions(vector a_mg, vector mu_mg, vector sigma_mg)
 {
   spdlog::debug("{}: Begins", "set_mg_functions");
 
   bool debug_fail = false;
-  if (z_mg.n_elem != mu_mg.n_elem || z_mg.n_elem != sigma_mg.n_elem)
+  if (a_mg.n_elem != mu_mg.n_elem || a_mg.n_elem != sigma_mg.n_elem)
     debug_fail = true;
   else
     if (io_z.n_elem == 0)
@@ -1715,21 +1715,21 @@ void set_mg_functions(vector z_mg, vector mu_mg, vector sigma_mg)
       "set_mg_functions", mg_z.n_elem, mg_mu.n_elem, mg_sigma);
     exit(1);
   }
-  if(z_mg.n_elem < 5)
+  if(a_mg.n_elem < 5)
   {
-    spdlog::critical("{}: bad input w/ z_mg.size = {}"
-      "set_mg_functions", z_mg.n_elem);
+    spdlog::critical("{}: bad input w/ a_mg.size = {}"
+      "set_mg_functions", a_mg.n_elem);
     exit(1);
   }
 
   int cache_update = 0;
-  if (cosmology.MGFuncs_nz != static_cast<int>(z_mg.n_elem) || cosmology.MGFuncs == NULL)
+  if (cosmology.MGFuncs_nz != static_cast<int>(a_mg.n_elem) || cosmology.MGFuncs == NULL)
     cache_update = 1;
   else
   {
     for (int i=0; i<cosmology.MGFuncs_nz; i++) 
     {
-      if (fdiff(cosmology.MGFuncs[0][i], z_mg(i)) ||
+      if (fdiff(cosmology.MGFuncs[0][i], a_mg(i)) ||
           fdiff(cosmology.MGFuncs[1][i], mu_mg(i)) ||
           fdiff(cosmology.MGFuncs[2][i], sigma_mg(i))) 
       {
@@ -1741,17 +1741,17 @@ void set_mg_functions(vector z_mg, vector mu_mg, vector sigma_mg)
 
   if (1 == cache_update)
   {
-    cosmology.MGFuncs_nz = static_cast<int>(z_mg.n_elem);
+    cosmology.MGFuncs_nz = static_cast<int>(a_mg.n_elem);
 
-    if (cosmology.MGFuncs != NULL) free(cosmology.G);
+    if (cosmology.MGFuncs != NULL) free(cosmology.MGFuncs);
     cosmology.MGFuncs = (double**) malloc2d(3, cosmology.MGFuncs_nz);
 
     #pragma omp parallel for
     for (int i=0; i < cosmology.MGFuncs_nz; i++)
     {
-      cosmology.G[0][i] = z_mg(i);
-      cosmology.G[1][i] = mu_mg(i);
-      cosmology.G[2][i] = sigma_mg(i);
+      cosmology.MGFuncs[0][i] = a_mg(i);
+      cosmology.MGFuncs[1][i] = mu_mg(i);
+      cosmology.MGFuncs[2][i] = sigma_mg(i);
     }
 
     cosmology.random = RandomNumber::get_instance().get();

@@ -102,7 +102,7 @@ void set_cosmology(
     std::vector<double> io_G,
     std::vector<double> io_z_1D,
     std::vector<double> io_chi,
-    std::vector<double> z_mg,
+    std::vector<double> a_mg,
     std::vector<double> mu_mg,
     std::vector<double> sigma_mg,
   )
@@ -134,7 +134,7 @@ void set_cosmology(
     );
     
   cosmolike_interface::set_mg_functions(
-      arma::conv_to<arma::Col<double>>::from(z_mg),
+      arma::conv_to<arma::Col<double>>::from(a_mg),
       arma::conv_to<arma::Col<double>>::from(mu_mg),
       arma::conv_to<arma::Col<double>>::from(sigma_mg)
     );

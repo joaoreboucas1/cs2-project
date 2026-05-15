@@ -166,6 +166,14 @@ typedef struct
   // chi = G[1,j<chi_nz]
   int G_nz;
   double** G;
+  // ---------------------------------------------------
+  // ---------------------------------------------------
+  // Modified Gravity
+  // z     = G[0,j<MGFuncs_nz]
+  // mu    = G[1,j<MGFuncs_nz]
+  // Sigma = G[2,j<MGFuncs_nz]
+  int MGFuncs_nz;
+  double** MGFuncs;
 } cosmopara;
 
 typedef struct
