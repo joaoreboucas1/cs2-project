@@ -1706,7 +1706,7 @@ void set_mg_functions(vector a_mg, vector mu_mg, vector sigma_mg)
   if (a_mg.n_elem != mu_mg.n_elem || a_mg.n_elem != sigma_mg.n_elem)
     debug_fail = true;
   else
-    if (io_z.n_elem == 0)
+    if (a_mg.n_elem == 0)
       debug_fail = true;
   
   if (debug_fail)
