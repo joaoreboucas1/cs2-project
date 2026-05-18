@@ -109,16 +109,19 @@ void get_mu_and_sigma(const double a_in, double *mu_out, double *sigma_out)
 {
   for (size_t i = 0; i < cosmology.MGFuncs_nz - 1; ++i) {
     const double a_low     = cosmology.MGFuncs[0][i];
+    const double z_low     = 1.0/a_low - 1.0;
     const double mu_low    = cosmology.MGFuncs[1][i];
     const double sigma_low = cosmology.MGFuncs[2][i];
     if (a_in > a_low) {
       const double a_hi     = cosmology.MGFuncs[0][i+1];
+      const double z_hi     = 1.0/a_hi - 1.0;
       const double mu_hi    = cosmology.MGFuncs[1][i+1];
       const double sigma_hi = cosmology.MGFuncs[2][i+1];
-      double t = (a_in - a_low)/(a_hi - a_low);
+      double t = (z_in - z_low)/(z_hi - z_low);
       if (t > 1.0) t = 1.0;
-      *mu_out    = mu_low + (mu_hi - mu_low)/(a_hi - a_low)*t;
-      *sigma_out = sigma_low + (sigma_hi - sigma_low)/(a_hi - a_low)*t;
+      *mu_out    = mu_low + (mu_hi - mu_low)/(z_hi - z_low)*t;
+      *sigma_out = sigma_low + (sigma_hi - sigma_low)/(z_hi - z_low)*t;
+      print("get_mu_and_sigma: at a_in = %f, got mu_out = %f\n", a_in, mu_out);
       return;
     }
   }

@@ -1752,7 +1752,7 @@ void set_mg_functions(vector a_mg, vector mu_mg, vector sigma_mg)
       cosmology.MGFuncs[0][i] = a_mg(i);
       cosmology.MGFuncs[1][i] = mu_mg(i);
       cosmology.MGFuncs[2][i] = sigma_mg(i);
-      spdlog::info("set_mg_functions: a = {}, mu = {}, sigma = {}", a_mg(i), mu_mg(i), sigma_mg(i));
+      // spdlog::info("set_mg_functions: a = {}, mu = {}, sigma = {}", a_mg(i), mu_mg(i), sigma_mg(i));
     }
 
     cosmology.random = RandomNumber::get_instance().get();
