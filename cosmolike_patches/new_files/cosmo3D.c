@@ -120,9 +120,8 @@ void get_mu_and_sigma(const double a_in, double *mu_out, double *sigma_out)
       const double sigma_hi = cosmology.MGFuncs[2][i+1];
       double t = (z_in - z_low)/(z_hi - z_low);
       if (t > 1.0) t = 1.0;
-      *mu_out    = mu_low + (mu_hi - mu_low)/(z_hi - z_low)*t;
-      *sigma_out = sigma_low + (sigma_hi - sigma_low)/(z_hi - z_low)*t;
-      printf("get_mu_and_sigma: at a_in = %f (z_in = %f), got mu_out = %f\n", a_in, z_in, mu_out);
+      *mu_out    = mu_low + (mu_hi - mu_low)*t;
+      *sigma_out = sigma_low + (sigma_hi - sigma_low)*t;
       return;
     }
   }
