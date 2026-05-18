@@ -10,6 +10,7 @@ COSMOLIKE_DIR=${ROOTDIR}/external_modules/code/cosmolike
 cp ${SOURCE_DIR}/_cosmolike_prototype_base.py ${DES_Y3_DIR}/likelihood/
 cp ${SOURCE_DIR}/interface.cpp ${DES_Y3_DIR}/interface/
 cp ${SOURCE_DIR}/generic_interface.cpp ${COSMOLIKE_DIR}/
+cp ${SOURCE_DIR}/generic_interface.hpp ${COSMOLIKE_DIR}/
 cp ${SOURCE_DIR}/structs.h ${COSMOLIKE_DIR}/
 cp ${SOURCE_DIR}/cosmo2D.c ${COSMOLIKE_DIR}/
 cp ${SOURCE_DIR}/cosmo3D.h ${COSMOLIKE_DIR}/
