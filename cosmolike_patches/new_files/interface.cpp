@@ -356,7 +356,10 @@ PYBIND11_MODULE(cosmolike_des_y3_interface, m)
        py::arg("lnP_nonlinear").none(false),
        py::arg("G").none(false),
        py::arg("z_1D").none(false),
-       py::arg("chi").none(false)
+       py::arg("chi").none(false),
+       py::arg("a_mg").none(false),
+       py::arg("mu_mg").none(false),
+       py::arg("sigma_mg").none(false)
     );
 
   m.def("set_baryon_pcs",

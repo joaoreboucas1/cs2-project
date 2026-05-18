@@ -5,6 +5,7 @@
   2. In `ci.set_cosmology()`, add the `z_MG`, `mu` and `sigma` from CAMB
 - `des_y3/interface/interface.cpp`:
   1. L187, `set_cosmology()` function: add mu and sigma as parameters, and then call `set_mg_functions(io_z_2D, mu, sigma)`
+  2. Also add the extra parameters to the `m.def('set_cosmology')` at L348
 - `external_modules/code/cosmolike/generic_interface.cpp`:
   1. Add another function `set_mg_functions(vector io_z, vector io_mu, vector io_sigma)` just like `set_growth(vector io_z, vector io_G)`
 - `external_modules/code/cosmolike/structs.h`:
