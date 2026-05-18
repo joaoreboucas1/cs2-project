@@ -143,7 +143,7 @@ class _cosmolike_prototype_base(DataSetLikelihood):
       "Cl": { # DONT REMOVE THIS - SOME WEIRD BEHAVIOR IN CAMB WITHOUT WANTS_CL
         'tt': 0
       },
-      "CAMBData": None, # JVR MOD: adding a theory requirement so we can access the \mu and \Sigma functions
+      "CAMBdata": None, # JVR MOD: adding a theory requirement so we can access the \mu and \Sigma functions
     }
 
   # ------------------------------------------------------------------------
@@ -235,8 +235,7 @@ class _cosmolike_prototype_base(DataSetLikelihood):
     G_growth = G_growth/G_growth[len(G_growth)-1] # do not merge these lines PII
 
     # JVR MOD BEGIN: getting the theory itself so I can access the mu and sigma functions and pass them to set_cosmology
-    theory = self.provider.get_CAMBdata()
-    results = getattr(theory, "camb_results", None) or getattr(theory, "results", None)
+    results = self.provider.get_CAMBdata()
     assert results is not None, "ERROR extracting the CAMB results from within Cosmolike likelihood"
     log_a   = results.Params.log_a
     mu_mg = results.Params.mu
