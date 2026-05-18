@@ -143,7 +143,7 @@ class _cosmolike_prototype_base(DataSetLikelihood):
       "Cl": { # DONT REMOVE THIS - SOME WEIRD BEHAVIOR IN CAMB WITHOUT WANTS_CL
         'tt': 0
       },
-      "theory": {"camb": None}, # JVR MOD: adding a theory requirement so we can access the \mu and \Sigma functions
+      "CAMBData": None, # JVR MOD: adding a theory requirement so we can access the \mu and \Sigma functions
     }
 
   # ------------------------------------------------------------------------
