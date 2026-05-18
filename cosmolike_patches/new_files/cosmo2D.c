@@ -948,7 +948,7 @@ double int_for_C_ss_tomo_limber(double a, void* params)
   double mu = 0.0;
   double sigma = 0.0;
   get_mu_and_sigma(a, &mu, &sigma);
-  // printf("shear integrand: at a_in = %f (z_in = %f), got mu_out = %f\n", a, 1.0/a - 1.0, mu);
+  printf("shear integrand: at a_in = %f (z_in = %f), got mu_out = %f\n", a, 1.0/a - 1.0, mu);
   
   const double WK1 = W_kappa(a, fK, n1);
   const double WK2 = W_kappa(a, fK, n2);

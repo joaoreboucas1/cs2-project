@@ -114,7 +114,6 @@ void get_mu_and_sigma(const double a_in, double *mu_out, double *sigma_out)
     const double z_low     = 1.0/a_low - 1.0;
     const double mu_low    = cosmology.MGFuncs[1][i];
     const double sigma_low = cosmology.MGFuncs[2][i];
-    printf("get_mu_and_sigma: at a = %f (z = %f), got mu = %f\n", a_low, z_low, mu_low);
     if (a_in < a_hi) {
       const double z_hi     = 1.0/a_hi - 1.0;
       const double mu_hi    = cosmology.MGFuncs[1][i+1];
@@ -123,7 +122,6 @@ void get_mu_and_sigma(const double a_in, double *mu_out, double *sigma_out)
       if (t > 1.0) t = 1.0;
       *mu_out    = mu_low + (mu_hi - mu_low)*t;
       *sigma_out = sigma_low + (sigma_hi - sigma_low)*t;
-      printf("get_mu_and_sigma: at a_in = %f (z_in = %f), got mu_out = %f\n", a_in, z_in, *mu_out);
       return;
     }
   }
