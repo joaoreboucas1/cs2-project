@@ -4,6 +4,9 @@ import getdist
 # ----- Matplotlib style and constants -----
 
 import matplotlib as mpl
+from matplotlib.lines import Line2D
+from matplotlib.patches import Patch
+import matplotlib.pyplot as plt
 mpl.rcParams['mathtext.fontset'] = "stix"
 mpl.rcParams['font.family'] = "STIXGeneral"
 
@@ -121,3 +124,34 @@ def get_mu_alphas_from_chain(chain, aktype, num_samples=1000):
         mus.append(mu)
     
     return log_a, np.array(alpha_Bs), np.array(alpha_Ks), np.array(mus)
+
+# Plot distribution of \mu
+
+def plot_mu_distribution(log_a, mus_all, output_filename):
+    fig, axs = plt.subplots(2, 2, sharey=True, sharex=True, figsize=(9, 9), gridspec_kw={"wspace": 0.05, "hspace": 0.12})
+    mean_line = Line2D([], [], ls="-", color="gray", label="Mean")
+    error_patch = Patch(color="gray", alpha=0.5, label="95%")
+    titles = ["$\\alpha_K \\propto \\Omega_\\mathrm{DE}$", "K-essence-like", "$\\alpha_K \\propto \\alpha_B$", "Cubic Galileon-like"]
+
+    for i, color in enumerate(colors[:4]):
+        row = i//2
+        col = i%2
+        z = 10**-log_a - 1
+        axs[row, col].plot(z, np.mean(mus_all[i], axis=0), color=color)
+        axs[row, col].fill_between(z, np.percentile(mus_all[i], 2.5, axis=0), np.percentile(mus_all[i], 97.5, axis=0), color=color,  alpha=0.5)
+
+    axs[0, 0].set_ylabel("$\\mu$", fontsize=30)
+    axs[1, 0].set_ylabel("$\\mu$", fontsize=30)
+    for i, (ax, title) in enumerate(zip(axs.flatten(), titles)):
+        row = i//2
+        col = i%2
+        ax.set_xlim(0, 3)
+        ax.grid()
+        if row == 1: ax.set_xlabel("$z$", fontsize=30)
+        ax.set_title(title, fontsize=25)
+        ax.tick_params(axis="both", labelsize=25)
+        ax.set_xticks([0, 1, 2, 3])
+
+    fig.legend(handles=[mean_line, error_patch], fontsize=20, bbox_to_anchor=(0.9,0.88))
+
+    plt.savefig(output_filename, bbox_inches="tight")
