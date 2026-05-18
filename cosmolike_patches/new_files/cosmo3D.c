@@ -107,6 +107,7 @@ double hoverh0v2(const double a, const double dchida)
 
 void get_mu_and_sigma(const double a_in, double *mu_out, double *sigma_out)
 {
+  const double z_in = 1.0/a_in - 1.0;
   for (size_t i = 0; i < cosmology.MGFuncs_nz - 1; ++i) {
     const double a_low     = cosmology.MGFuncs[0][i];
     const double z_low     = 1.0/a_low - 1.0;
