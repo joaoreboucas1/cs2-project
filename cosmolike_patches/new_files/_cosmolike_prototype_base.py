@@ -253,7 +253,7 @@ class _cosmolike_prototype_base(DataSetLikelihood):
       lnP_nonlinear=lnPNL, 
       G=G_growth,
       z_1D=self.z_interp_1D,
-      chi=self.provider.get_comoving_radial_distance(self.z_interp_1D)*h # convert to Mpc/h
+      chi=self.provider.get_comoving_radial_distance(self.z_interp_1D)*h, # convert to Mpc/h
       a_mg=a_mg,        # JVR MOD: passing z, mu and sigma functions to Cosmolike
       mu_mg=mu_mg,
       sigma_mg=sigma_mg
