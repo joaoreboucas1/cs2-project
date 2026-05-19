@@ -127,7 +127,7 @@ def get_mu_alphas_from_chain(chain, aktype, num_samples=1000):
 
 # Plot distribution of \mu
 
-def plot_mu_distribution(log_a, mus_all, output_filename):
+def plot_mu_distribution(log_a, mus_all, output_filename, plot_title=None):
     fig, axs = plt.subplots(2, 2, sharey=True, sharex=True, figsize=(9, 9), gridspec_kw={"wspace": 0.05, "hspace": 0.12})
     mean_line = Line2D([], [], ls="-", color="gray", label="Mean")
     error_patch = Patch(color="gray", alpha=0.5, label="95%")
@@ -153,5 +153,6 @@ def plot_mu_distribution(log_a, mus_all, output_filename):
         ax.set_xticks([0, 1, 2, 3])
 
     fig.legend(handles=[mean_line, error_patch], fontsize=20, bbox_to_anchor=(0.9,0.88))
+    if plot_title is not None: fig.suptitle(plot_title, fontsize=35, y=1)
 
     plt.savefig(output_filename, bbox_inches="tight")
