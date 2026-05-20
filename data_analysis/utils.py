@@ -156,3 +156,47 @@ def plot_mu_distribution(log_a, mus_all, output_filename, plot_title=None):
     if plot_title is not None: fig.suptitle(plot_title, fontsize=35, y=1)
 
     plt.savefig(output_filename, bbox_inches="tight")
+
+# Analysis of best-fit
+
+def read_minimum(chain_index):
+    with open(f"../chains/MCMC{chain_index}/MCMC{chain_index}.minimum.txt", "r") as f:
+        contents = f.read().splitlines()
+        header, values = contents
+        keys = header[1:].split()
+        values = list(map(float, values.split()))
+        minimum = {key: value for key, value in zip(keys, values)}
+    return minimum
+
+def get_chi2(minimum):
+    return minimum['chi2__planck_2020_hillipop.TTTEEE']+minimum['chi2__planck_2018_lowl.TT']+minimum['chi2__planck_2020_lollipop.lowlEB']+minimum['chi2__bao.desi_dr2']+minimum['chi2__sn.desy5']
+
+def get_cmb(minimum):
+    if "alpha_K_0" not in minimum.keys():
+        use_cs2 = False
+        alpha_K_0 = 1
+    else:
+        use_cs2 = True
+        alpha_K_0 = minimum['alpha_K_0']
+
+    if "cs2_0" not in minimum.keys():
+        cs2_0 = 1.0
+    else:
+        cs2_0 = minimum['cs2_0']
+    
+    cosmo = camb.set_params(
+        H0=minimum['H0'], ombh2=minimum['omegabh2'], omch2=minimum['omegach2'], nnu=3.044, mnu=0.06,
+        As=minimum['As'], ns=minimum['ns'], tau=minimum['tau'], WantTransfer=True, w=minimum['w'], wa=minimum['wa'],
+        dark_energy_model="ppf",
+        alpha_K_parametrization=minimum['aktype'], cs2_0=cs2_0, cs2_a=0, use_cs2=use_cs2, alpha_K_0=alpha_K_0
+    )
+    results = camb.get_results(cosmo)
+    log_a = results.Params.log_a
+    alpha_B = results.Params.alpha_B
+    alpha_K = results.Params.alpha_K
+    mu = results.Params.mu
+    cl_tt = results.get_lensed_scalar_cls(CMB_unit='muK')[:,0]
+    cl_ee = results.get_lensed_scalar_cls(CMB_unit='muK')[:,1]
+    cl_te = results.get_lensed_scalar_cls(CMB_unit='muK')[:,3]
+    cl_pp = results.get_lens_potential_cls(lmax=2000)[:,0]
+    return log_a*np.log10(np.e), alpha_B, alpha_K, mu, cl_tt, cl_te, cl_ee, cl_pp
