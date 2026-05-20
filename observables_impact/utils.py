@@ -49,36 +49,38 @@ def plot_pk_differences(cases, base_case, ks, redshifts, plot_name):
     axs[-1].set_xlabel(r"$k \; (h/\mathrm{Mpc})$", fontsize=20)
     plt.savefig(plot_name, bbox_inches="tight", dpi=200)
 
-def plot_cmb_differences(cases, base_case, plot_name):
-    fig, axs = plt.subplots(2, 1, figsize=(7, 8), sharex=True, gridspec_kw={'wspace': 0.2, 'hspace': 0.2})
+def plot_cmb_differences(cases, base_case, plot_name, suptitle=None):
+    colors = ["tab:blue"]
+    fig, axs = plt.subplots(2, 1, figsize=(7, 8), sharex=True, gridspec_kw={'hspace': 0.05})
     ells_tt = np.arange(2051)
     ells_pp = np.arange(2001)
 
     # Generated from https://colorbrewer2.org/#type=sequential&scheme=OrRd&n=4
     styles = [
-        {"lw": 2, "color": "#1b9e77"},
-        {"lw": 2, "color": "#d95f02"},
-        {"lw": 2, "color": "#7570b3"},
+        {"color": "#fdcc8a", "lw":2, "ls":"-"},
+        {"color": "#fc8d59", "lw":2, "ls":"--"},
+        {"color": "#d7301f", "lw":2, "ls":"-."},
     ]
 
     for style, (name, case) in zip(styles, cases.items()):
-        if name == "quint": continue
         axs[0].semilogx(ells_pp, 100*(case["cl_tt"]/base_case["cl_tt"] - 1)[:len(ells_pp)], label=case["label"], **style)
         axs[1].semilogx(ells_pp, 100*(case["cl_pp"]/base_case["cl_pp"] - 1), label=case["label"], **style)
         # axs[1, 0].semilogx(ells_tt, 100*(case["cl_ee"]/base_case["cl_ee"] - 1), label=case["label"], **style)
         # axs[1, 1].semilogx(ells_tt, case["cl_te"] - base_case["cl_te"],   label=case["label"], **style)
 
     # axs[0].set_xlabel(r"$\ell$", fontsize=15)
-    axs[0].set_ylabel(r"$100 \times \Delta C_\ell^{TT}/C_{\ell, c_s^2=1}^{TT}$", fontsize=15)
-    axs[1].set_xlabel(r"$\ell$", fontsize=15)
-    axs[1].set_ylabel(r"$100 \times \Delta C_\ell^{\phi\phi}/C_{\ell, c_s^2=1}^{\phi\phi}$", fontsize=15)
+    axs[0].set_ylabel(r"$100 \times \Delta C_\ell^{TT}/C_{\ell, c_s^2=1}^{TT}$", fontsize=20)
+    axs[1].set_xlabel(r"$\ell$", fontsize=20)
+    axs[1].set_ylabel(r"$100 \times \Delta C_\ell^{\phi\phi}/C_{\ell, c_s^2=1}^{\phi\phi}$", fontsize=20)
     # axs[1, 0].set_xlabel(r"$\ell$", fontsize=15)
     # axs[1, 0].set_ylabel(r"$100 \times \Delta C_\ell^{EE}/C_{\ell, c_s^2=1}^{EE}$", fontsize=15)
     # axs[1, 1].set_xlabel(r"$\ell$", fontsize=15)
     # axs[1, 1].set_ylabel(r"$\Delta C_\ell^{TE}$", fontsize=15)
-    axs[0].legend(fontsize=15, frameon=True, framealpha=1, edgecolor="black")
+    axs[0].legend(fontsize=22, frameon=True, framealpha=1, edgecolor="black")
     for ax in axs.flatten():
-        ax.tick_params(axis='both', which='major', labelsize=13)
+        ax.tick_params(axis='both', which='major', length=6, labelsize=20)
+        ax.tick_params(axis='both', which='minor', length=3)
         ax.grid()
         ax.set_xlim([2, 2000])
+    if suptitle is not None: fig.suptitle(suptitle, fontsize=30)
     plt.savefig(plot_name, bbox_inches="tight", dpi=200)
