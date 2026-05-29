@@ -23,7 +23,7 @@ def get_observables(case, H0, ombh2, omch2, As, ns, tau, w0, wa, dark_energy_typ
     mu = results.Params.mu
     case.update({"P_lin": P_lin, "cl_tt": cl_tt, "cl_ee": cl_ee, "cl_te": cl_te, "cl_pp": cl_pp, "log_a": log_a, "mu": mu})
 
-def plot_pk_differences(cases, base_case, ks, redshifts, plot_name):
+def plot_pk_differences(cases, base_case, ks, redshifts, plot_name, suptitle=None):
     # Precomputing min and max relative errors for unifying the colormaps in each axis
     fig, axs = plt.subplots(len(cases), 1, sharex=True, sharey=True, figsize=(5, 7), gridspec_kw={"hspace": 0.11})
     scale = -np.inf
@@ -43,10 +43,11 @@ def plot_pk_differences(cases, base_case, ks, redshifts, plot_name):
         ax.set_yticks([0, 1, 2, 3])
 
     cbar = fig.colorbar(mesh, ax=axs, orientation="vertical", fraction=0.05, pad=0.02)
-    cbar.set_label(r"$100 \times \Delta P(k)/P(k)_{c_s^2=1}$", fontsize=20)
+    cbar.set_label(r"$100 \times \Delta P(k)/P(k)_\mathrm{GR}$", fontsize=20)
     cbar.ax.tick_params(labelsize=18)
     for ax in axs: ax.tick_params(labelsize=17)
     axs[-1].set_xlabel(r"$k \; (h/\mathrm{Mpc})$", fontsize=20)
+    if suptitle is not None: fig.suptitle(suptitle, fontsize=30)
     plt.savefig(plot_name, bbox_inches="tight", dpi=200)
 
 def plot_cmb_differences(cases, base_case, plot_name, suptitle=None):
@@ -69,16 +70,16 @@ def plot_cmb_differences(cases, base_case, plot_name, suptitle=None):
         # axs[1, 1].semilogx(ells_tt, case["cl_te"] - base_case["cl_te"],   label=case["label"], **style)
 
     # axs[0].set_xlabel(r"$\ell$", fontsize=15)
-    axs[0].set_ylabel(r"$100 \times \Delta C_\ell^{TT}/C_{\ell, c_s^2=1}^{TT}$", fontsize=20)
-    axs[1].set_xlabel(r"$\ell$", fontsize=20)
-    axs[1].set_ylabel(r"$100 \times \Delta C_\ell^{\phi\phi}/C_{\ell, c_s^2=1}^{\phi\phi}$", fontsize=20)
+    axs[0].set_ylabel(r"$100 \times \Delta C_\ell^{TT}/C_{\ell, \mathrm{GR}}^{TT}$", fontsize=27)
+    axs[1].set_xlabel(r"$\ell$", fontsize=27)
+    axs[1].set_ylabel(r"$100 \times \Delta C_\ell^{\phi\phi}/C_{\ell, \mathrm{GR}}^{\phi\phi}$", fontsize=27)
     # axs[1, 0].set_xlabel(r"$\ell$", fontsize=15)
     # axs[1, 0].set_ylabel(r"$100 \times \Delta C_\ell^{EE}/C_{\ell, c_s^2=1}^{EE}$", fontsize=15)
     # axs[1, 1].set_xlabel(r"$\ell$", fontsize=15)
     # axs[1, 1].set_ylabel(r"$\Delta C_\ell^{TE}$", fontsize=15)
     axs[0].legend(fontsize=22, frameon=True, framealpha=1, edgecolor="black")
     for ax in axs.flatten():
-        ax.tick_params(axis='both', which='major', length=6, labelsize=20)
+        ax.tick_params(axis='both', which='major', length=6, labelsize=25)
         ax.tick_params(axis='both', which='minor', length=3)
         ax.grid()
         ax.set_xlim([2, 2000])

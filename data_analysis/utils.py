@@ -132,11 +132,11 @@ def plot_mu_distribution(log_a, mus_all, output_filename, plot_title=None):
     mean_line = Line2D([], [], ls="-", color="gray", label="Mean")
     error_patch = Patch(color="gray", alpha=0.5, label="95%")
     titles = ["$\\alpha_K \\propto \\Omega_\\mathrm{DE}$", "K-essence-like", "$\\alpha_K \\propto \\alpha_B$", "Cubic Galileon-like"]
+    z = 10**-log_a - 1
 
     for i, color in enumerate(colors[:4]):
         row = i//2
         col = i%2
-        z = 10**-log_a - 1
         axs[row, col].plot(z, np.mean(mus_all[i], axis=0), color=color)
         axs[row, col].fill_between(z, np.percentile(mus_all[i], 2.5, axis=0), np.percentile(mus_all[i], 97.5, axis=0), color=color,  alpha=0.5)
 
