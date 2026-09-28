@@ -99,3 +99,7 @@
 102 | w0waq | cs2mg | Baseline | alpha_K omega_de, subluminal, linear lensing
 103 | w0waq | cs2mg | Baseline | alpha_K prop, subluminal, linear lensing
 104 | w0waq | cs2mg | Baseline | alpha_K cugal, subluminal, linear lensing
+105 | w0wa | cs2mg | Baseline minus lowl | alpha_K omega_de
+106 | w0wa | cs2mg | Baseline minus lowl | alpha_K kess
+107 | w0wa | cs2mg | Baseline minus lowl | alpha_K prop
+108 | w0wa | cs2mg | Baseline minus lowl | alpha_K cugal
