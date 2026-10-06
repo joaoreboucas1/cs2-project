@@ -50,6 +50,23 @@ def plot_pk_differences(cases, base_case, ks, redshifts, plot_name, suptitle=Non
     if suptitle is not None: fig.suptitle(suptitle, fontsize=30)
     plt.savefig(plot_name, bbox_inches="tight", dpi=200)
 
+def plot_pk_differences_single_z(cases, base_case, ks, plot_name, suptitle=None):
+    # Precomputing min and max relative errors for unifying the colormaps in each axis
+    fig, ax = plt.subplots(figsize=(5, 4))
+
+    colors = ["C0", "C1", "C2"]
+
+    for i, (case, color) in enumerate(zip(cases.values(), colors)):
+        relative_errors = 100*(case["P_lin"][0]/base_case["P_lin"][0] - 1)
+        mesh = ax.plot(ks, relative_errors, color=color, label=case["label"])
+        ax.set_xscale('log')
+        ax.set_ylabel(r"$100\times\Delta P(k)/P(k)_\mathrm{GR}$", fontsize=20)
+
+    ax.set_xlabel(r"$k \; (h/\mathrm{Mpc})$", fontsize=20)
+    if suptitle is not None: fig.suptitle(suptitle, fontsize=30)
+    plt.legend()
+    plt.savefig(plot_name, bbox_inches="tight", dpi=200)
+
 def plot_cmb_differences(cases, base_case, plot_name, suptitle=None):
     colors = ["tab:blue"]
     fig, axs = plt.subplots(2, 1, figsize=(7, 8), sharex=True, gridspec_kw={'hspace': 0.05})
