@@ -326,6 +326,7 @@ theory:
       use_cs2: true
       alpha_K_parametrization: 4
       use_qsa: false
+      lens_potential_accuracy: 0
 sampler:
   mcmc:
     covmat: ./projects/cs2-project/desi_lipop_sn.covmat

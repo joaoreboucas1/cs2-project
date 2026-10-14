@@ -178,6 +178,7 @@ theory:
       use_cs2: True
       alpha_K_parametrization: 2
       use_qsa: false
+      lens_potential_accuracy: 0
 
 sampler:
   mcmc:

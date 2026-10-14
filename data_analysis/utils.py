@@ -125,6 +125,69 @@ def get_mu_alphas_from_chain(chain, aktype, num_samples=1000):
     
     return log_a, np.array(alpha_Bs), np.array(alpha_Ks), np.array(mus)
 
+# ---- Scale-dependent \mu without the quasi-static approximation (Cataneo+2024 eq. 31a) -----
+
+def solve_mu_k_noqsa(aktype, alpha_K_0, cs2, cs2_a, ombh2, omch2, w0, wa, H0, k_values, use_qsa=False):
+    # k_values in h/Mpc. Returns mu_inf (the QSA expression, k -> inf limit) and mu(k) for each k
+    # use_qsa=True only skips CAMB's pole check, so it can be used on chains run with the QSA
+    cosmo = camb.set_params(
+        H0=H0, ombh2=ombh2, omch2=omch2, nnu=3.044, mnu=0.06,
+        As=2.1e-9, ns=0.96, tau=0.06, WantTransfer=True, w=w0, wa=wa,
+        dark_energy_model="ppf",
+        alpha_K_parametrization=aktype, cs2_0=cs2, cs2_a=cs2_a, use_cs2=True, alpha_K_0=alpha_K_0, use_qsa=use_qsa
+    )
+    results = camb.get_background(cosmo)
+    log_a = np.array(results.Params.log_a)
+    alpha_B = np.array(results.Params.alpha_B)
+    c_sN2 = np.array(results.Params.c_sN2)
+    mu_p = np.array(results.Params.mu_p)
+    a = np.exp(log_a)
+    z = 1/a - 1
+    aH = a*results.hubble_parameter(z)/299792.458 # 1/Mpc
+
+    # Same conventions as MG_node_ratios in CAMB
+    safe_c_sN2 = np.where(c_sN2 == 0, 1.0, c_sN2)
+    r1 = np.where(c_sN2 == 0, 0.0, mu_p/safe_c_sN2)
+    mu_inf = np.where(c_sN2 == 0, np.where(alpha_B == 0, 1.0, 1e20), 1.0 + alpha_B**2/(2.0*safe_c_sN2))
+
+    mu_k = []
+    for k in k_values:
+        x = (k*(H0/100)/aH)**2
+        mu_k.append((r1 + x*mu_inf)/(r1 + x))
+    return log_a*np.log10(np.e), mu_inf, np.array(mu_k)
+
+def get_mu_k_from_chain(chain, aktype, k_values, num_samples=1000, use_qsa=False):
+    np.random.shuffle(chain.samples)
+
+    thin_factor = len(chain.samples)//num_samples
+    thin_samples = chain.samples[::thin_factor]
+
+    print(f"Number of samples = {len(chain.samples)}")
+    print(f"Number of samples after thinning = {len(thin_samples)}")
+
+    pnames = [line.split("\t")[0] for line in chain.getParamNames().__str__().split("\n")]
+
+    mu_infs = []
+    mu_ks   = []
+
+    for sample in thin_samples:
+        alpha_K_0 = sample[pnames.index("alpha_K_0")] if "alpha_K_0" in pnames else 1.0
+        cs2 = sample[pnames.index("cs2_0")]
+        cs2_a = sample[pnames.index("cs2_a")] if "cs2_a" in pnames else 0.0
+        w0 = sample[pnames.index("w")] if "w" in pnames else -1.0
+        wa = sample[pnames.index("w0pwa")] - w0 if "w0pwa" in pnames else 0.0
+        H0 = sample[pnames.index("H0*")]
+        ombh2 = sample[pnames.index("omegabh2")]
+        omch2 = sample[pnames.index("omegach2")]
+
+        log_a, mu_inf, mu_k = solve_mu_k_noqsa(aktype=aktype, alpha_K_0=alpha_K_0, cs2=cs2, cs2_a=cs2_a, ombh2=ombh2, omch2=omch2, w0=w0, wa=wa, H0=H0, k_values=k_values, use_qsa=use_qsa)
+
+        mu_infs.append(mu_inf)
+        mu_ks.append(mu_k)
+
+    # mu_ks has shape (num_samples, len(k_values), len(log_a))
+    return log_a, np.array(mu_infs), np.array(mu_ks)
+
 # Plot distribution of \mu
 
 def plot_mu_distribution(log_a, mus_all, output_filename, plot_title=None):
