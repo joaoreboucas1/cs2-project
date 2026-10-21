@@ -107,11 +107,11 @@
 110 | w0waq | cs2mg | Baseline+DES-Y3-CS minus lowl | alpha_K kess
 111 | w0wa | cs2mg | Baseline+DES-Y3-CS minus lowl | alpha_K prop
 112 | w0wa | cs2mg | Baseline+DES-Y3-CS minus lowl | alpha_K cugal
-113 | w0wa | cs2mg | Baseline | alpha_K omega_de, subluminal, no QSA
-114 | w0waq | cs2mg | Baseline | alpha_K kess, subluminal, no QSA
-115 | w0wa | cs2mg | Baseline | alpha_K prop, subluminal, no QSA
-116 | w0wa | cs2mg | Baseline | alpha_K cugal, subluminal, no QSA
-117 | w0wa | cs2mg | Baseline+CMBL+DES-Y3-CS | alpha_K omega_de, subluminal, no QSA
-118 | w0waq | cs2mg | Baseline+CMBL+DES-Y3-CS | alpha_K kess, subluminal, no QSA
-119 | w0wa | cs2mg | Baseline+CMBL+DES-Y3-CS | alpha_K prop, subluminal, no QSA
-120 | w0wa | cs2mg | Baseline+CMBL+DES-Y3-CS | alpha_K cugal, subluminal, no QSA
+113 | w0wa | cs2mg | Baseline | alpha_K omega_de, subluminal, linear lensing, no QSA
+114 | w0waq | cs2mg | Baseline | alpha_K kess, subluminal, linear lensing, no QSA
+115 | w0wa | cs2mg | Baseline | alpha_K prop, subluminal, linear lensing, no QSA
+116 | w0wa | cs2mg | Baseline | alpha_K cugal, subluminal, linear lensing, no QSA
+117 | w0wa | cs2mg | Baseline+CMBL+DES-Y3-CS | alpha_K omega_de, subluminal, linear lensing, no QSA
+118 | w0waq | cs2mg | Baseline+CMBL+DES-Y3-CS | alpha_K kess, subluminal, linear lensing, no QSA
+119 | w0wa | cs2mg | Baseline+CMBL+DES-Y3-CS | alpha_K prop, subluminal, linear lensing, no QSA
+120 | w0wa | cs2mg | Baseline+CMBL+DES-Y3-CS | alpha_K cugal, subluminal, linear lensing, no QSA

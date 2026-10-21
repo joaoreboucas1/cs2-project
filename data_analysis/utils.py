@@ -156,14 +156,14 @@ def solve_mu_k_noqsa(aktype, alpha_K_0, cs2, cs2_a, ombh2, omch2, w0, wa, H0, k_
         mu_k.append((r1 + x*mu_inf)/(r1 + x))
     return log_a*np.log10(np.e), mu_inf, np.array(mu_k)
 
-def get_mu_k_from_chain(chain, aktype, k_values, num_samples=1000, use_qsa=False):
-    np.random.shuffle(chain.samples)
-
-    thin_factor = len(chain.samples)//num_samples
-    thin_samples = chain.samples[::thin_factor]
+def get_mu_k_from_chain(chain, aktype, k_values, num_samples=1000, use_qsa=False, seed=0):
+    # Draw samples according to the chain weights (without modifying the chain)
+    rng = np.random.default_rng(seed)
+    idx = rng.choice(len(chain.weights), size=num_samples, p=chain.weights/np.sum(chain.weights))
+    thin_samples = chain.samples[idx]
 
     print(f"Number of samples = {len(chain.samples)}")
-    print(f"Number of samples after thinning = {len(thin_samples)}")
+    print(f"Number of weighted draws = {len(thin_samples)}")
 
     pnames = [line.split("\t")[0] for line in chain.getParamNames().__str__().split("\n")]
 

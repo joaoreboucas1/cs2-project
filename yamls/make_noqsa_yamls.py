@@ -1,7 +1,7 @@
 import re
 
 # Rerun chains with the scale-dependent mu (Cataneo+2024 eq. 31a) instead of the QSA one
-original_indices = [56, 57, 58, 59, 79, 80, 81, 82]
+original_indices = [94, 95, 96, 97, 98, 99, 100, 101]  # linear CMB lensing
 new_indices = range(113, 113+8)  # 109-112 reserved for other work
 
 for original_i, new_i in zip(original_indices, new_indices):
