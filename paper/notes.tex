@@ -1,0 +1,262 @@
+\documentclass{article}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+\usepackage{xcolor}
+
+\newcommand{\jvr}[1]{\textcolor{orange}{[{\bf JVR}: #1]}}
+\newcommand{\prd}{Physical Review D}
+
+\title{Constraining Sound Speed}
+\author{João Victor Rebouças}
+\date{May 2025}
+
+\begin{document}
+
+\maketitle
+
+% General story:
+% 1998, discovery of accelerated expansion
+% \Lambda CDM = cosmological constant, simplest model
+% Hubble tension
+% DESI and SN dynamical DE
+% Phantom crossing = difficult to realize theoretically (tachyonic instabilities, etc)
+% In particular, due to stability considerations
+% We'd like to impose c_s^2 > 0
+% In quintessence, c_s^2 = 1 but it cannot cross the phantom barrier
+% In K-essence, c_s^2 may be written as a function of w and be approximated as a *linear* function of w
+% In EFT of DE and Horndeski, you can control c_s^2 in terms of the free functions
+% In our work, we will add stability conditions on top of the dark energy background
+% In previous works, c_s^2 = 1
+% We show a preference for dynamical sound speed
+% Our coefficients disfavor k-essence models
+
+\section{Introduction}
+In light of recent results from DESI and supernovae surveys, the dark energy sound speed has been under scrutiny. These recent datasets suggest some preference for dynamical dark energy with strong yet undecisive significance, and could be a breakthrough in understanding the nature of dark energy. If we consider dark energy as a cosmological fluid, it is also characterized by other two properties: its pressure perturbations and anisotropic stress. These quantities control the dark energy perturbations and can be further parametrized in terms of the effective sound speed $c_s^2(k, a)$ and the viscosity coefficient $c_\mathrm{vis}^2$.
+
+A simple fundamental model of dark energy is quintessence, a scalar field whose action is given by
+\begin{equation}
+    S = \int d^4x \sqrt{-g}\left( -\frac{1}{2}\partial_\mu\phi\partial^\mu\phi - V(\phi) \right),
+\end{equation}
+where $g$ is the metric determinant, $\phi$ is the scalar field and $V(\phi)$ is a potential function. The scalar field dynamics is determined by the Klein-Gordon equation,
+\begin{equation}
+    \ddot\phi + 3H\dot\phi + V'(\phi) = 0,
+\end{equation}
+where $H$ is the Hubble factor. Furthermore, its density and pressure are given by
+\begin{align}
+    \rho = \frac{\dot\phi^2}{2} + V(\phi), \\
+    P = \frac{\dot\phi^2}{2} - V(\phi).
+\end{align}
+Thus, the quintessence equation of state is given by
+\begin{equation}
+    w = \frac{\frac{\dot\phi^2}{2} - V(\phi)}{\frac{\dot\phi^2}{2} + V(\phi)}.
+\end{equation}
+By analyzing the perturbation equations, we can obtain its effective sound speed $c_s^2 = 1$. This makes dark energy perturbations negligible inside the horizon.
+
+K-essence is a generalization of the quintessence model. Defining the kinetic term as
+\begin{equation}
+    X = -\frac{1}{2}\partial_\mu\phi\partial^\mu\phi,
+\end{equation}
+the k-essence action is given by
+\begin{equation}
+    S = \int d^4x \sqrt{-g}F(X, \phi).
+\end{equation}
+For a separable function $F(X, \phi) = f(\phi)g(X)$, it can be shown that
+\begin{equation}
+    c_s^2 = \frac{g'(X)}{g'(X) + 2Xg''(X)}.
+\end{equation}
+For the case of a simple Taylor expansion $g(X) = -X + X^2$, one can obtain
+\begin{equation}
+    c_s^2 = \frac{1 + w}{5 - 3w}.
+\end{equation}
+Near $w = -1$, this can be approximated by a linear relation,
+\begin{equation}
+    c_s^2 \approx \frac{1}{8}(1 + w).
+\end{equation}
+We may generalize this relation as
+\begin{equation}
+    c_s^2 = c_{s,0}^2 + c_{s,1}^2 w.
+\end{equation}
+
+\section{Sound speed in different models}
+\subsection{Quintessence}
+Let $\phi$ and $\delta\phi$ be the homogeneous and linear perturbation parts of the quintessence scalar field, assuming the Newtonian gauge. The equations of motion are
+\begin{align}
+    \ddot\phi + 2\mathcal{H}\dot\phi + a^2V' &= 0, \\
+    \delta\ddot{\phi} + 2\mathcal{H}\delta\dot\phi + (k^2 + a^2V'')\delta\phi &= -2a^2V'\Psi + \dot\phi(\Psi' + 3\Phi'),
+\end{align}
+where dots indicate derivatives with respect to conformal time, $\mathcal{H}$ is the conformal Hubble factor and $V'$ and $V''$ are derivatives of the potential $V(\phi)$ with respect to the field. Its energy momentum tensor components are given by
+\begin{align}
+    \rho_\phi &= \frac{\dot\phi^2}{2a^2} + V, \\
+    P_\phi &= \frac{\dot\phi^2}{2a^2} - V, \\
+    \delta\rho_\phi &= \frac{\dot\phi\delta\dot\phi}{a^2} + V'\delta\phi - \frac{\dot\phi^2}{a^2}\Psi, \\
+    \delta P_\phi &= \frac{\dot\phi\delta\dot\phi}{a^2} - V'\delta\phi - \frac{\dot\phi^2}{a^2}\Psi \\
+    q_\phi &= (\rho_\phi + P_\phi)v_\phi = \frac{k\dot\phi\delta\phi}{a^2}.
+\end{align}
+
+We perform a gauge transformation to the quintessence comoving gauge, and perturbations will be denoted with tildes, \textit{i.e.} $\delta\tilde\rho_\phi$, $\delta \tilde P_\phi$, $\tilde q_\phi$. The quintessence comoving gauge is defined via the conditions
+\begin{equation}
+    \tilde v_\phi - \tilde B = \tilde H_T = 0.
+\end{equation}
+This sets the gauge transformation fields $T$ and $L$ as
+\begin{align}
+    L &= -\frac{H_T}{k} = 0, \\
+    T &= \frac{v_\phi - B}{k} = \frac{v_\phi}{k}.
+\end{align}
+We then must transform $\delta \rho$ and $\delta P$ to this gauge, according to the transformations
+\begin{align}
+    \delta\tilde\rho &= \delta\rho - \dot\rho T, \\
+    \delta\tilde P &= \delta P - \dot P T.
+\end{align}
+We use the fact that
+\begin{equation}
+    \dot P = c_a^2 \dot\rho
+\end{equation}
+to write
+\begin{align}
+    \delta\tilde\rho &= \delta\rho - \dot\rho T, \\
+    \delta\tilde P &= \delta P - c_a^2\dot\rho T.
+\end{align}
+we can also identify from the Newtonian gauge relations that
+\begin{equation}
+    \delta P = \delta \rho - 2V'\delta\phi,
+\end{equation}
+and thus
+\begin{align}
+    \delta\tilde\rho &= \delta\rho - \dot\rho T, \\
+    \delta\tilde P &= \delta \rho - 2V'\delta\phi - c_a^2\dot\rho T.
+\end{align}
+The transformation equation for $\delta\rho$ can be written as
+\begin{align}
+    \delta\tilde\rho = \delta \rho + 3\mathcal{H}(\rho_\phi + P_\phi)\frac{v_\phi}{k}, \\
+    \delta\tilde\rho = \delta \rho + 3\mathcal{H}\frac{\dot\phi\delta\phi}{a^2}.
+\end{align}
+We can write the quintessence adiabatic sound speed as
+\begin{align}
+    c_a^2 = \frac{\dot P}{\dot\rho}, \\
+    \dot P = \frac{\dot\phi \ddot\phi}{a^2} - 2\mathcal{H}\frac{\dot\phi^2}{2a^2} - V'\dot\phi, \\
+    \dot P = \frac{\dot\phi}{a^2}\left( \ddot\phi - \mathcal{H}\dot\phi - a^2V'\right),\\
+    \dot P = \frac{\dot\phi}{a^2}\left(  - 3\mathcal{H}\dot\phi - 2a^2V'\right),\\
+    \dot \rho = \frac{\dot\phi \ddot\phi}{a^2} - 2\mathcal{H}\frac{\dot\phi^2}{2a^2} + V'\dot\phi, \\
+    \dot \rho = \frac{\dot\phi}{a^2}\left( \ddot\phi - \mathcal{H}\dot\phi + a^2V'\right),\\
+    \dot\rho = \frac{\dot\phi}{a^2}(-3\mathcal{H}\dot\phi), \\
+    c_a^2 = \frac{-3\mathcal{H}\dot\phi - 2a^2V'}{-3\mathcal{H}\dot\phi}, \\
+    c_a^2 = 1 + \frac{2a^2V'}{3\mathcal{H}\dot\phi}.
+\end{align}
+Inserting this into the $\delta \tilde P$ transformation equation, we obtain
+\begin{align}
+    \delta\tilde P &= \delta \rho - 2V'\delta\phi - \left( 1 + \frac{2a^2V'}{3\mathcal{H}\dot\phi}\right)\dot\rho T, \\
+    \delta\tilde P &= \delta \rho - 2V'\delta\phi - \left( 1 + \frac{2a^2V'}{3\mathcal{H}\dot\phi}\right)(-3\mathcal{H}(\rho_\phi + P_\phi))\frac{v_\phi}{k}, \\
+    \delta\tilde P &= \delta \rho - 2V'\delta\phi - \left( 1 + \frac{2a^2V'}{3\mathcal{H}\dot\phi}\right)(-3\mathcal{H})\frac{\dot\phi\delta\phi}{a^2}, \\
+    \delta\tilde P &= \delta \rho - 2V'\delta\phi + 3\mathcal{H}\frac{\dot\phi\delta\phi}{a^2} + 2V'\delta\phi, \\
+    \delta\tilde P &= \delta \rho + 3\mathcal{H}\frac{\dot\phi\delta\phi}{a^2} = \delta\tilde\rho.
+\end{align}
+Therefore, in the quintessence comoving gauge, $\delta\tilde P = \delta\tilde\rho$ and thus $c_s^2 = 1$.
+
+\subsection{K-essence}
+\textbf{In this section, dots denote derivatives with respect to cosmic time $t$!}
+
+In k-essence theories, there is a notion of sound speed arising from the generalized Klein-Gordon equation,
+\begin{equation}
+    \ddot\phi + c_s^2k^2\phi + ... = 0,
+\end{equation}
+where
+\begin{equation}
+    c_s^2 = \frac{P_{,X}}{\rho_{,X}}.
+\end{equation}
+In principle, this notion is different than that of the sound speed of the field inhomogeneities. Let's open the k-essence equations to see.
+
+The background equations in cosmic time are
+\begin{align}
+    ( F_{,X} + \dot\phi^2F_{,XX})\ddot\phi + 3HF_{,X}\dot\phi + F_{,X\phi}\dot\phi^2 - F_{,\phi} = 0, \\
+    X = \frac{\dot\phi^2}{2}, \\
+    \rho_\phi = 2XF_{,X} - F, \\
+    P_\phi = F.
+\end{align}
+For the perturbations, it's a good idea to assume the synchronous gauge, so that we can just perturb the density and pressure in terms of $\delta\phi$ and $\delta X$,
+\begin{align}
+    \delta P_\phi = F_{,X}\delta X + F_{,\phi}\delta\phi, \\
+    \delta \rho_\phi = F_{,X}\delta X - F_{,\phi}\delta\phi + 2XF_{,XX}\delta X + 2XF_{,X\phi}\delta\phi, \\
+    (\rho_\phi + P_\phi)v_\phi = F_{,X}k\dot\phi\delta\phi.
+\end{align}
+Therefore, we can reproduce the same recipe used in quintessence, but now with the synchronous gauge. Since both Newtonian and Synchronous gauges have $B = 0$, the transformation from both gauges to the k-essence comoving gauge is characterized by 
+$T = v_\phi/k$. We can compute the adiabatic sound speed of k-essence,
+\begin{align}
+    \dot P_\phi = F_{,X}\dot X + F_{,\phi}\dot\phi, \\
+    \dot \rho_\phi = 2\dot X F_{,X} + 2X\dot XF_{,XX} + 2XF_{,X\phi}\dot\phi - F_{,X}\dot X - F_{,\phi}\dot\phi, \\
+    \dot \rho_\phi = (F_{,X} + 2XF_{,XX})\dot X - F_{,\phi}\dot\phi + 2 XF_{,X\phi}\dot\phi, \\
+    c_a^2 = \frac{\dot P_\phi}{\dot \rho_\phi} = \frac{F_{,X}\dot X + F_{,\phi}\dot\phi}{(F_{,X} + 2XF_{XX})\dot X - (F_{,\phi} - 2XF_{,X\phi})\dot\phi}.
+\end{align}
+
+Since $\dot X = \dot \phi \ddot \phi$, we can write
+\begin{equation}
+    c_a^2 = \frac{F_{,X}\ddot \phi + F_{,\phi}}{(F_{,X} + 2XF_{XX})\ddot \phi - (F_{,\phi} - 2XF_{,X\phi})}.
+\end{equation}
+The denominator can be simplified using Klein-Gordon,
+\begin{align}
+    (F_{,X} + 2XF_{XX})\ddot \phi - F_{,\phi} + 2XF_{,X\phi} = -3HF_{,X}\dot\phi, \\
+    c_a^2 = -\frac{F_{,X}\ddot \phi + F_{,\phi}}{3HF_{,X}\dot\phi}.
+\end{align}
+
+The density perturbations transform as
+\begin{align*}
+    \delta\tilde\rho = \delta\rho - \dot\rho T, \\
+    \delta\tilde\rho = \delta\rho + 3HF_{,X}\dot\phi\delta\phi.
+\end{align*}
+The pressure perturbations transform as
+\begin{align*}
+    \delta\tilde P = \delta P - \dot P T, \\
+    \delta\tilde P = \delta P + c_a^2 \times 3HF_{,X}\dot\phi\delta\phi, \\
+    \delta\tilde P = \delta P - F_{,\phi}\delta \phi - F_{,X}\ddot\phi\delta\phi.
+\end{align*}
+Inserting the synchronous gauge definitions, we get
+\begin{align*}
+    \delta\tilde\rho &= F_{,X}\delta X - F_{,\phi}\delta\phi + 2XF_{,XX}\delta X + 2XF_{,X\phi}\delta\phi + 3HF_{,X}\dot\phi\delta\phi, \\
+    \delta\tilde P &= F_{,X}\delta X - F_{,X}\ddot\phi\delta\phi.
+\end{align*}
+Using Klein-Gordon again, we can rewrite the density perturbations
+\begin{align*}
+    \delta\tilde\rho &= (F_{,X} + 2XF_{,XX})\delta X + (2XF_{,X\phi} + 3HF_{,X}\dot\phi - F_{,\phi})\delta\phi, \\
+    \delta\tilde\rho &= (F_{,X} + 2XF_{,XX})\delta X - (F_{,X} + 2XF_{,XX})\ddot\phi\delta\phi, \\
+    \delta\tilde P &= F_{,X}\delta X - F_{,X}\ddot\phi\delta\phi.
+\end{align*}
+And thus,
+\begin{align}
+    c_s^2 &= \frac{F_{,X}\delta X - F_{,X}\ddot\phi\delta\phi}{(F_{,X} + 2XF_{,XX})\delta X - (F_{,X} + 2XF_{,XX})\ddot\phi\delta\phi}, \\
+    c_s^2 &= \frac{F_{,X}}{F_{,X} + 2XF_{,XX}}.
+\end{align}
+Therefore, for k-essence models, the effective sound speed is time-dependent, but scale independent. Given a solution to the Klein-Gordon equations, k-essence properties such as $w$ and $c_s^2$ can be written in terms of $\phi$ and $X$. This allows us to construct relations between $w$ and $c_s^2$. An example is the case of~\cite{kessence}, in which they consider a separable lagrangian and expand the kinetic part in a power series,
+\begin{equation}
+    F = K(X)V(\phi) = V(\phi)(-X + X^2).
+\end{equation}
+In this case, 
+\begin{equation}
+    c_s^2 = \frac{-1 + 2X}{-1 + 6X}.
+\end{equation}
+Furthermore, there are solutions with constant equation of state $w$ satisfied by
+\begin{equation}
+    X = \frac{1 - w}{1 - 3w}.
+\end{equation}
+Therefore, the sound speed is related to the equation of state by
+\begin{equation}
+    c_s^2 = \frac{1 + w}{5 - 3w}.
+\end{equation}
+Given that the dark energy equation of state is fairly close to $-1$, we can approximate this relation by
+\begin{equation}
+    c_s^2 = \frac{1}{8}(1 + w).
+\end{equation}
+
+With this context, we explore possible relations between the dark energy sound speed and its equation of state. This relation can be parametrized by
+\begin{equation}
+    c_s^2 = c_{s,0}^2 + c_{s,1}^2w,
+\end{equation}
+where $c_{s,0}^2$ and $c_{s,1}^2$ are constants. We argue that, given a dynamical equation of state, a nonzero $c_{s,1}^2$ indicates a preference for dynamical sound speed. Furthermore, the sign of $c_{s,1}^2$ can also point towards specific fundamental theories. For the case of quintessence, we expect $c_{s,0}^2 = 1$ and $c_{s,1}^2 = 0$. For the case of k-essence, $c_{s,0}^2 = c_{s,1}^2 = 1/8$.
+
+Additionally, we impose a physical constraint that the effective sound speed must obey $0 \leq c_s^2 \leq 1$. The condition $c_s^2 \geq 0$ avoids gradient instabilities, while $c_s^2 \leq 1$ ensures causality.
+
+\subsection{Effective Field Theory of Dark Energy}
+Beyond quintessence and K-essence, we can consider non-minimally coupled scalar fields, considerably broadening the model space. One framework to investigate this class of theories is the Effective Field Theory of Dark Energy (EFTofDE). The main idea is to write a field action for gravity in the unitary gauge, where the extra scalar degree of freedom is homogeneous and the spatial diffeomorphisms are unbroken. Therefore, one can use a finite set of operators (\textit{e.g.} $g^{00}$, $R$, $K$...) as a basis to expand a general action at any order -- usually quadratic to obtain linear perturbation equations, and its coefficients are free functions of the theory, called the EFT functions. One set of functions closely related to physical phenomena is $[\alpha_M, \alpha_K, \alpha_B, \alpha_T]$. In particular, the kineticity and braiding functions $\alpha_K$ and $\alpha_B$ control the dynamics of the sound speed, which is scale-independent.
+
+\bibliographystyle{plain}
+\bibliography{refs}
+\end{document}
