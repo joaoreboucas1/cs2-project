@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.22)  21 OCT 2026 13:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.22)  29 OCT 2026 10:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -370,11 +370,7 @@ Class revtex4-2 Info: multicol was not loaded (OK!) on input line 64.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count319
-) (./paper.aux
-
-LaTeX Warning: Label `eq:mg_mu_from_alpha_qsa' multiply defined.
-
-)
+) (./paper.aux)
 \openout1 = `paper.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
@@ -430,135 +426,131 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 100.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1{/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
-Overfull \hbox (2.29279pt too wide) detected at line 203
+Overfull \hbox (2.29279pt too wide) detected at line 188
 []
  []
 
-[3{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-Overfull \hbox (16.71483pt too wide) detected at line 274
+[3]
+Overfull \hbox (19.49261pt too wide) detected at line 259
 [][][]\OML/cmm/m/it/10 ^^V[] \OT1/cmr/m/n/10 = [] [] \OML/cmm/m/it/10 :
  []
 
+[4{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+<figures/mg_cases_mu_noqsa.pdf, id=328, 1021.0063pt x 741.08871pt>
+File: figures/mg_cases_mu_noqsa.pdf Graphic file (type pdf)
+<use figures/mg_cases_mu_noqsa.pdf>
+Package pdftex.def Info: figures/mg_cases_mu_noqsa.pdf  used on input line 280.
+(pdftex.def)             Requested size: 510.0pt x 370.17029pt.
+<figures/impact_pk_noqsa.png, id=345, 719.8092pt x 477.7047pt>
+File: figures/impact_pk_noqsa.png Graphic file (type png)
+<use figures/impact_pk_noqsa.png>
+Package pdftex.def Info: figures/impact_pk_noqsa.png  used on input line 298.
+(pdftex.def)             Requested size: 510.0pt x 338.47295pt.
+<figures/impact_cmb_noqsa.pdf, id=347, 934.0145pt x 547.26141pt>
+File: figures/impact_cmb_noqsa.pdf Graphic file (type pdf)
+<use figures/impact_cmb_noqsa.pdf>
+Package pdftex.def Info: figures/impact_cmb_noqsa.pdf  used on input line 305.
+(pdftex.def)             Requested size: 510.0pt x 298.82356pt.
+ [5] [6 <./figures/mg_cases_mu_noqsa.pdf>] [7 <./figures/impact_pk_noqsa.png>] [8 <./figures/impact_cmb_noqsa.pdf>]
+<figures/triangle_ds1_subluminal_mg_noqsa.pdf, id=515, 569.8018pt x 570.85335pt>
+File: figures/triangle_ds1_subluminal_mg_noqsa.pdf Graphic file (type pdf)
+<use figures/triangle_ds1_subluminal_mg_noqsa.pdf>
+Package pdftex.def Info: figures/triangle_ds1_subluminal_mg_noqsa.pdf  used on input line 442.
+(pdftex.def)             Requested size: 246.0pt x 246.45514pt.
+<figures/pole_region_noqsa.pdf, id=516, 973.23917pt x 686.10706pt>
+File: figures/pole_region_noqsa.pdf Graphic file (type pdf)
+<use figures/pole_region_noqsa.pdf>
+Package pdftex.def Info: figures/pole_region_noqsa.pdf  used on input line 449.
+(pdftex.def)             Requested size: 510.0pt x 359.54156pt.
+<figures/lambda_mg_cs2_subluminal_ds1_noqsa.pdf, id=517, 497.89014pt x 583.2057pt>
+File: figures/lambda_mg_cs2_subluminal_ds1_noqsa.pdf Graphic file (type pdf)
+<use figures/lambda_mg_cs2_subluminal_ds1_noqsa.pdf>
+Package pdftex.def Info: figures/lambda_mg_cs2_subluminal_ds1_noqsa.pdf  used on input line 456.
+(pdftex.def)             Requested size: 246.0pt x 288.15822pt.
+<figures/constraint_mu_ds1_subluminal_noqsa.pdf, id=518, 594.32034pt x 654.06357pt>
+File: figures/constraint_mu_ds1_subluminal_noqsa.pdf Graphic file (type pdf)
+<use figures/constraint_mu_ds1_subluminal_noqsa.pdf>
+Package pdftex.def Info: figures/constraint_mu_ds1_subluminal_noqsa.pdf  used on input line 463.
+(pdftex.def)             Requested size: 246.0pt x 270.72272pt.
+ [9]
 
-LaTeX Warning: Reference `eq:mg_mu_from_alpha' on page 4 undefined on input line 284.
+LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix] on input line 469.
 
+[10 <./figures/triangle_ds1_subluminal_mg_noqsa.pdf>]
+<figures/chi2_dist_comparison_noqsa.pdf, id=601, 715.25844pt x 353.03781pt>
+File: figures/chi2_dist_comparison_noqsa.pdf Graphic file (type pdf)
+<use figures/chi2_dist_comparison_noqsa.pdf>
+Package pdftex.def Info: figures/chi2_dist_comparison_noqsa.pdf  used on input line 496.
+(pdftex.def)             Requested size: 246.0pt x 121.42108pt.
+<figures/triangle_ds2_subluminal_mg_noqsa.pdf, id=602, 569.8018pt x 570.85335pt>
+File: figures/triangle_ds2_subluminal_mg_noqsa.pdf Graphic file (type pdf)
+<use figures/triangle_ds2_subluminal_mg_noqsa.pdf>
+Package pdftex.def Info: figures/triangle_ds2_subluminal_mg_noqsa.pdf  used on input line 503.
+(pdftex.def)             Requested size: 246.0pt x 246.45514pt.
+<figures/lambda_mg_cs2_subluminal_ds2_noqsa.pdf, id=605, 497.89014pt x 583.2057pt>
+File: figures/lambda_mg_cs2_subluminal_ds2_noqsa.pdf Graphic file (type pdf)
+<use figures/lambda_mg_cs2_subluminal_ds2_noqsa.pdf>
+Package pdftex.def Info: figures/lambda_mg_cs2_subluminal_ds2_noqsa.pdf  used on input line 510.
+(pdftex.def)             Requested size: 246.0pt x 288.15822pt.
+<figures/constraint_mu_ds2_subluminal_noqsa.pdf, id=608, 594.32034pt x 654.06357pt>
+File: figures/constraint_mu_ds2_subluminal_noqsa.pdf Graphic file (type pdf)
+<use figures/constraint_mu_ds2_subluminal_noqsa.pdf>
+Package pdftex.def Info: figures/constraint_mu_ds2_subluminal_noqsa.pdf  used on input line 517.
+(pdftex.def)             Requested size: 246.0pt x 270.72272pt.
+ [11 <./figures/pole_region_noqsa.pdf>]
 
-LaTeX Warning: Reference `eq:mg_mu_from_alpha' on page 4 undefined on input line 289.
+LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix] on input line 525.
 
-<figures/mg_cases_mu.pdf, id=294, 1106.85677pt x 380.52164pt>
-File: figures/mg_cases_mu.pdf Graphic file (type pdf)
-<use figures/mg_cases_mu.pdf>
-Package pdftex.def Info: figures/mg_cases_mu.pdf  used on input line 293.
-(pdftex.def)             Requested size: 510.0pt x 175.32658pt.
+[12 <./figures/lambda_mg_cs2_subluminal_ds1_noqsa.pdf> <./figures/constraint_mu_ds1_subluminal_noqsa.pdf> <./figures/chi2_dist_comparison_noqsa.pdf> <./figures/triangle_ds2_subluminal_mg_noqsa.pdf>]
 
-LaTeX Warning: Reference `eq:mg_mu_from_alpha' on page 4 undefined on input line 298.
-
-
-LaTeX Warning: Reference `eq:mg_mu_from_alpha' on page 4 undefined on input line 298.
-
-[4]
-<figures/impact_pk_ppf.png, id=327, 409.40955pt x 501.5538pt>
-File: figures/impact_pk_ppf.png Graphic file (type png)
-<use figures/impact_pk_ppf.png>
-Package pdftex.def Info: figures/impact_pk_ppf.png  used on input line 311.
-(pdftex.def)             Requested size: 255.0pt x 312.39127pt.
-<figures/impact_pk_mg_case1.png, id=329, 392.78745pt x 501.5538pt>
-File: figures/impact_pk_mg_case1.png Graphic file (type png)
-<use figures/impact_pk_mg_case1.png>
-Package pdftex.def Info: figures/impact_pk_mg_case1.png  used on input line 312.
-(pdftex.def)             Requested size: 244.79782pt x 312.5826pt.
-<figures/impact_cmb_ppf.pdf, id=330, 485.94048pt x 577.97621pt>
-File: figures/impact_cmb_ppf.pdf Graphic file (type pdf)
-<use figures/impact_cmb_ppf.pdf>
-Package pdftex.def Info: figures/impact_cmb_ppf.pdf  used on input line 319.
-(pdftex.def)             Requested size: 249.9028pt x 297.23334pt.
-<figures/impact_cmb_mg_case1.pdf, id=331, 494.47235pt x 577.97621pt>
-File: figures/impact_cmb_mg_case1.pdf Graphic file (type pdf)
-<use figures/impact_cmb_mg_case1.pdf>
-Package pdftex.def Info: figures/impact_cmb_mg_case1.pdf  used on input line 320.
-(pdftex.def)             Requested size: 247.35031pt x 289.11967pt.
- [5 <./figures/mg_cases_mu.pdf>] [6 <./figures/impact_pk_ppf.png> <./figures/impact_pk_mg_case1.png>] [7 <./figures/impact_cmb_ppf.pdf> <./figures/impact_cmb_mg_case1.pdf>]
-<figures/triangle_ds1_subluminal_mg.pdf, id=503, 714.34181pt x 715.39334pt>
-File: figures/triangle_ds1_subluminal_mg.pdf Graphic file (type pdf)
-<use figures/triangle_ds1_subluminal_mg.pdf>
-Package pdftex.def Info: figures/triangle_ds1_subluminal_mg.pdf  used on input line 455.
-(pdftex.def)             Requested size: 246.0pt x 246.3634pt.
- [8]
-
-LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix] on input line 459.
-
-<figures/lambda_mg_cs2_subluminal_ds1.pdf, id=520, 796.0877pt x 359.38428pt>
-File: figures/lambda_mg_cs2_subluminal_ds1.pdf Graphic file (type pdf)
-<use figures/lambda_mg_cs2_subluminal_ds1.pdf>
-Package pdftex.def Info: figures/lambda_mg_cs2_subluminal_ds1.pdf  used on input line 462.
-(pdftex.def)             Requested size: 246.0pt x 111.05153pt.
-<figures/constraint_mu_ds1_subluminal.pdf, id=521, 594.32034pt x 599.17664pt>
-File: figures/constraint_mu_ds1_subluminal.pdf Graphic file (type pdf)
-<use figures/constraint_mu_ds1_subluminal.pdf>
-Package pdftex.def Info: figures/constraint_mu_ds1_subluminal.pdf  used on input line 469.
-(pdftex.def)             Requested size: 246.0pt x 248.00453pt.
-
-Underfull \hbox (badness 1603) in paragraph at lines 470--470
-[]\OT1/cmr/m/n/9 FIG. 6. []Constraints on $\OML/cmm/m/it/9 ^^V\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 a\OT1/cmr/m/n/9 )$ for the com-bi-na-tion of
- []
-
-[9 <./figures/triangle_ds1_subluminal_mg.pdf> <./figures/lambda_mg_cs2_subluminal_ds1.pdf> <./figures/constraint_mu_ds1_subluminal.pdf>]
-<figures/chi2_dist_comparison.pdf, id=674, 714.99875pt x 351.33382pt>
-File: figures/chi2_dist_comparison.pdf Graphic file (type pdf)
-<use figures/chi2_dist_comparison.pdf>
-Package pdftex.def Info: figures/chi2_dist_comparison.pdf  used on input line 500.
-(pdftex.def)             Requested size: 246.0pt x 120.87791pt.
-<figures/constraint_mu_ds1_lcdm.pdf, id=676, 594.32034pt x 654.06357pt>
-File: figures/constraint_mu_ds1_lcdm.pdf Graphic file (type pdf)
-<use figures/constraint_mu_ds1_lcdm.pdf>
-Package pdftex.def Info: figures/constraint_mu_ds1_lcdm.pdf  used on input line 509.
-(pdftex.def)             Requested size: 163.20374pt x 179.60356pt.
-<figures/constraint_mu_ds1_superluminal.pdf, id=677, 594.32034pt x 654.06357pt>
-File: figures/constraint_mu_ds1_superluminal.pdf Graphic file (type pdf)
-<use figures/constraint_mu_ds1_superluminal.pdf>
-Package pdftex.def Info: figures/constraint_mu_ds1_superluminal.pdf  used on input line 510.
-(pdftex.def)             Requested size: 163.20374pt x 179.60356pt.
-<figures/constraint_mu_ds1_dyncs2.pdf, id=678, 594.32034pt x 654.06357pt>
-File: figures/constraint_mu_ds1_dyncs2.pdf Graphic file (type pdf)
-<use figures/constraint_mu_ds1_dyncs2.pdf>
-Package pdftex.def Info: figures/constraint_mu_ds1_dyncs2.pdf  used on input line 511.
-(pdftex.def)             Requested size: 163.20374pt x 179.60356pt.
- [10 <./figures/chi2_dist_comparison.pdf>]
-<figures/triangle_ds2_subluminal_mg.pdf, id=735, 714.34181pt x 715.39334pt>
-File: figures/triangle_ds2_subluminal_mg.pdf Graphic file (type pdf)
-<use figures/triangle_ds2_subluminal_mg.pdf>
-Package pdftex.def Info: figures/triangle_ds2_subluminal_mg.pdf  used on input line 522.
-(pdftex.def)             Requested size: 246.0pt x 246.3634pt.
-<figures/lambda_mg_cs2_subluminal_ds2.pdf, id=738, 796.0877pt x 359.38428pt>
-File: figures/lambda_mg_cs2_subluminal_ds2.pdf Graphic file (type pdf)
-<use figures/lambda_mg_cs2_subluminal_ds2.pdf>
-Package pdftex.def Info: figures/lambda_mg_cs2_subluminal_ds2.pdf  used on input line 529.
-(pdftex.def)             Requested size: 246.0pt x 111.05153pt.
-<figures/constraint_mu_ds2_subluminal.pdf, id=741, 594.32034pt x 599.17664pt>
-File: figures/constraint_mu_ds2_subluminal.pdf Graphic file (type pdf)
-<use figures/constraint_mu_ds2_subluminal.pdf>
-Package pdftex.def Info: figures/constraint_mu_ds2_subluminal.pdf  used on input line 536.
-(pdftex.def)             Requested size: 246.0pt x 248.00453pt.
- [11 <./figures/constraint_mu_ds1_lcdm.pdf> <./figures/constraint_mu_ds1_superluminal.pdf> <./figures/constraint_mu_ds1_dyncs2.pdf> <./figures/triangle_ds2_subluminal_mg.pdf> <./figures/lambda_mg_cs2_subluminal_ds2.pdf>]
-
-LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix] on input line 550.
+LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix] on input line 533.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 553.
+               Default added (so using `tbp') on input line 536.
 
-[12 <./figures/constraint_mu_ds2_subluminal.pdf>]
-<figures/triangle_ds1_subluminal_mg_kessence.pdf, id=1057, 714.36191pt x 715.39334pt>
-File: figures/triangle_ds1_subluminal_mg_kessence.pdf Graphic file (type pdf)
-<use figures/triangle_ds1_subluminal_mg_kessence.pdf>
-Package pdftex.def Info: figures/triangle_ds1_subluminal_mg_kessence.pdf  used on input line 608.
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 569.
+
+<figures/constraint_mu_ds1_subluminal_qsa_vs_noqsa.pdf, id=888, 594.32034pt x 599.17664pt>
+File: figures/constraint_mu_ds1_subluminal_qsa_vs_noqsa.pdf Graphic file (type pdf)
+<use figures/constraint_mu_ds1_subluminal_qsa_vs_noqsa.pdf>
+Package pdftex.def Info: figures/constraint_mu_ds1_subluminal_qsa_vs_noqsa.pdf  used on input line 599.
+(pdftex.def)             Requested size: 244.79782pt x 246.7977pt.
+<figures/constraint_mu_ds2_subluminal_qsa_vs_noqsa.pdf, id=889, 594.32034pt x 599.17664pt>
+File: figures/constraint_mu_ds2_subluminal_qsa_vs_noqsa.pdf Graphic file (type pdf)
+<use figures/constraint_mu_ds2_subluminal_qsa_vs_noqsa.pdf>
+Package pdftex.def Info: figures/constraint_mu_ds2_subluminal_qsa_vs_noqsa.pdf  used on input line 600.
+(pdftex.def)             Requested size: 244.79782pt x 246.7977pt.
+[13 <./figures/lambda_mg_cs2_subluminal_ds2_noqsa.pdf> <./figures/constraint_mu_ds2_subluminal_noqsa.pdf>]
+<figures/constraint_mu_ds1_lcdm.pdf, id=994, 594.32034pt x 654.06357pt>
+File: figures/constraint_mu_ds1_lcdm.pdf Graphic file (type pdf)
+<use figures/constraint_mu_ds1_lcdm.pdf>
+Package pdftex.def Info: figures/constraint_mu_ds1_lcdm.pdf  used on input line 613.
+(pdftex.def)             Requested size: 163.20374pt x 179.60356pt.
+<figures/constraint_mu_ds1_superluminal.pdf, id=995, 594.32034pt x 654.06357pt>
+File: figures/constraint_mu_ds1_superluminal.pdf Graphic file (type pdf)
+<use figures/constraint_mu_ds1_superluminal.pdf>
+Package pdftex.def Info: figures/constraint_mu_ds1_superluminal.pdf  used on input line 614.
+(pdftex.def)             Requested size: 163.20374pt x 179.60356pt.
+<figures/constraint_mu_ds1_dyncs2.pdf, id=996, 594.32034pt x 654.06357pt>
+File: figures/constraint_mu_ds1_dyncs2.pdf Graphic file (type pdf)
+<use figures/constraint_mu_ds1_dyncs2.pdf>
+Package pdftex.def Info: figures/constraint_mu_ds1_dyncs2.pdf  used on input line 615.
+(pdftex.def)             Requested size: 163.20374pt x 179.60356pt.
+ [14] [15 <./figures/constraint_mu_ds1_subluminal_qsa_vs_noqsa.pdf> <./figures/constraint_mu_ds2_subluminal_qsa_vs_noqsa.pdf>]
+<figures/triangle_ds1_subluminal_mg_kessence_noqsa.pdf, id=1122, 714.36191pt x 715.39334pt>
+File: figures/triangle_ds1_subluminal_mg_kessence_noqsa.pdf Graphic file (type pdf)
+<use figures/triangle_ds1_subluminal_mg_kessence_noqsa.pdf>
+Package pdftex.def Info: figures/triangle_ds1_subluminal_mg_kessence_noqsa.pdf  used on input line 649.
 (pdftex.def)             Requested size: 244.79782pt x 245.14081pt.
-<figures/triangle_ds2_subluminal_mg_kessence.pdf, id=1058, 714.36191pt x 715.39334pt>
-File: figures/triangle_ds2_subluminal_mg_kessence.pdf Graphic file (type pdf)
-<use figures/triangle_ds2_subluminal_mg_kessence.pdf>
-Package pdftex.def Info: figures/triangle_ds2_subluminal_mg_kessence.pdf  used on input line 609.
+<figures/triangle_ds2_subluminal_mg_kessence_noqsa.pdf, id=1123, 714.36191pt x 715.39334pt>
+File: figures/triangle_ds2_subluminal_mg_kessence_noqsa.pdf Graphic file (type pdf)
+<use figures/triangle_ds2_subluminal_mg_kessence_noqsa.pdf>
+Package pdftex.def Info: figures/triangle_ds2_subluminal_mg_kessence_noqsa.pdf  used on input line 650.
 (pdftex.def)             Requested size: 244.79782pt x 245.14081pt.
- Excluding 'comment' comment. (./paper.bbl [13]
+ [16 <./figures/constraint_mu_ds1_lcdm.pdf> <./figures/constraint_mu_ds1_superluminal.pdf> <./figures/constraint_mu_ds1_dyncs2.pdf>] Excluding 'comment' comment. (./paper.bbl
 Underfull \hbox (badness 1412) in paragraph at lines 78--79
  \OT1/cmr/m/n/9 L. Allen, \OT1/cmr/m/it/9 et al.\OT1/cmr/m/n/9 , DESI DR2 re-sults. II. Mea-sure-
  []
@@ -573,7 +565,7 @@ Underfull \hbox (badness 1515) in paragraph at lines 90--91
  \OT1/cmr/m/n/9 , arXiv:2601.14559 (2026)[][], [][]arXiv:2601.14559 [astro-
  []
 
-[14 <./figures/triangle_ds1_subluminal_mg_kessence.pdf> <./figures/triangle_ds2_subluminal_mg_kessence.pdf>]
+
 Underfull \hbox (badness 1127) in paragraph at lines 114--115
  []\OT1/cmr/m/n/9 D. Ru-bin, G. Alder-ing, M. Be-toule, A. Fruchter,
  []
@@ -588,7 +580,7 @@ Underfull \hbox (badness 1226) in paragraph at lines 114--115
  \OT1/cmr/m/n/9 mol-ogy with 2,000 SNe Us-ing a Uni-fied Bayesian
  []
 
-
+[17]
 Underfull \hbox (badness 1194) in paragraph at lines 132--133
  []\OT1/cmr/m/n/9 I. G. Mc-Carthy, J. Sal-cido, J. Schaye, J. Kwan,
  []
@@ -613,7 +605,7 @@ Underfull \hbox (badness 1515) in paragraph at lines 156--157
  \OT1/cmr/m/n/9 , arXiv:2510.14957 (2025)[][], [][]arXiv:2510.14957 [astro-
  []
 
-
+[18 <./figures/triangle_ds1_subluminal_mg_kessence_noqsa.pdf> <./figures/triangle_ds2_subluminal_mg_kessence_noqsa.pdf>]
 Underfull \hbox (badness 1163) in paragraph at lines 189--190
  []\OT1/cmr/m/n/9 F. van Die and V. Des-jacques, Sound Mode and
  []
@@ -623,7 +615,7 @@ Underfull \hbox (badness 2856) in paragraph at lines 189--190
  \OT1/cmr/m/n/9 En-ergy, [][]arXiv e-prints , arXiv:2603.05049 (2026)[][],
  []
 
-[15]
+
 Underfull \hbox (badness 1383) in paragraph at lines 201--202
  \OT1/cmr/m/n/9 Q. Xia, Quin-tom cos-mol-ogy: The-o-ret-i-cal im-pli-ca-
  []
@@ -643,7 +635,7 @@ Underfull \hbox (badness 1571) in paragraph at lines 246--247
  \OT1/cmr/m/n/9 non-adiabatic sound speed: ini-tial con-di-tions and
  []
 
-
+[19]
 Underfull \hbox (badness 1515) in paragraph at lines 267--268
  \OT1/cmr/m/n/9 , arXiv:2507.19450 (2025)[][], [][]arXiv:2507.19450 [astro-
  []
@@ -678,7 +670,7 @@ Underfull \hbox (badness 2486) in paragraph at lines 297--298
  \OT1/cmr/m/n/9 malac^^Sarregui, Ob-ser-va-tional fu-ture of cos-mo-log-i-cal
  []
 
-[16]
+
 Underfull \hbox (badness 3407) in paragraph at lines 321--322
  \OT1/cmr/m/n/9 tem-per-a-ture, [][]Phys. Rev. D \OT1/cmr/bx/n/9 106\OT1/cmr/m/n/9 , 103507 (2022)[][],
  []
@@ -693,39 +685,32 @@ Underfull \hbox (badness 1112) in paragraph at lines 339--340
  \OT1/cmr/m/n/9 Rev. D \OT1/cmr/bx/n/9 70\OT1/cmr/m/n/9 , 063526 (2004)[][], [][]arXiv:astro-ph/0406275
  []
 
-
+[20]
 Underfull \hbox (badness 1515) in paragraph at lines 363--364
  \OT1/cmr/m/n/9 , arXiv:2510.14888 (2025)[][], [][]arXiv:2510.14888 [astro-
  []
 
-) [17] (./paper.aux)
+) [21] (./paper.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: 9C38F5FF2804EE6616B88EA64329B15B;3330.
+(rerunfilecheck)             Checksum: F146E7E5FB3FC3861C8E3194ED1DC0CD;3810.
  ) 
 Here is how much of TeX's memory you used:
- 13748 strings out of 467525
- 211446 string characters out of 5418982
- 677809 words of memory out of 5000000
- 42284 multiletter control sequences out of 15000+600000
+ 13769 strings out of 467525
+ 212660 string characters out of 5418982
+ 682879 words of memory out of 5000000
+ 42296 multiletter control sequences out of 15000+600000
  641692 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,13n,79p,1662b,798s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,13n,79p,2073b,836s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on paper.pdf (17 pages, 2096499 bytes).
+Output written on paper.pdf (21 pages, 1985856 bytes).
 PDF statistics:
- 1636 PDF objects out of 1728 (max. 8388607)
- 1026 compressed objects within 11 object streams
- 197 named destinations out of 1000 (max. 500000)
- 270 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1858 PDF objects out of 2073 (max. 8388607)
+ 1101 compressed objects within 12 object streams
+ 206 named destinations out of 1000 (max. 500000)
+ 291 words of extra memory for PDF output out of 10000 (max. 10000000)
 
